@@ -1,0 +1,796 @@
+USE SellingPoint
+GO
+
+/****** Object:  Table MOTOR    Script Date: 3/27/2018 4:29:53 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Motor](
+	[MOTORID] [bigint] IDENTITY(1,1) NOT NULL,
+	AGENCY VARCHAR(50),
+	AGENTCODE varchar(50) null,
+	BRANCHCODE VARCHAR(50),
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[REGISTRATIONNO] [varchar](25) NULL,
+	[VEHICLETYPE] [varchar](50) NULL,
+	[MAKE] [varchar](50) NULL,
+	[MODEL] [varchar](50) NULL,
+	[BODY] [varchar](50) NULL,
+	[YEAR] [int] NULL,
+	[TONNAGE] [int] NULL,
+	[ENGINENO] [varchar](50) NULL,
+	[CHASSISNO] [varchar](50) NULL,
+	[PURPOSEFUSE] [varchar](50) NULL,
+	[VEHICLEVALUE] [decimal](18, 3) NULL,
+	[GROSSPREMIUM] [decimal](18, 3) NULL,
+	[FINANCECOMPANY] [varchar](50) NULL,
+	[SRCCPREMIUM] [decimal](18, 0) NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](50) NULL,
+	[FINANCECOMPANYDESCRIPTION] [varchar](50) NULL,
+	[COMMENCEDATE] [datetime] NULL,
+	[EXPIRYDATE] [datetime] NULL,
+	[EXCESSAMOUNT] [decimal](18, 0) NULL,
+	[EXCESSTYPE] [varchar](50) NULL,
+	[INSUREDCODE] [varchar](50) NULL,
+	[NCBFROMDATE] [date] NULL,
+	[NCBTODATE] [date] NULL,
+	[NCBYEARS] [int] NULL,
+	[RATE] [decimal](18, 6) NULL,
+	[BASEPREMIUM] [decimal](18, 3) NULL,
+	[INSUREDNAME] [varchar](100) NULL,
+	[RENEWAL] [char](1) NULL,
+	[CLAIMAMOUNT] [decimal](18, 3) NULL,
+	[PREVIOUSDOCUMENTNO] [varchar](50) NULL,
+	[RENEWED] [char](1) NULL,
+	[FFPNUMBER] [varchar](50) NULL,
+	[RENEWALCOUNT] [int] NULL,
+	[LASTYEARSUMINSURED] [decimal](18, 0) NULL,
+	[LASTYEARPREMIUMAMOUNT] [varchar](50) NULL,
+	[LASTYEAREXPIRYDATE] [date] NULL,
+	[LOADAMOUNT] [decimal](18, 3) NULL,
+	[DISCOUNTAMOUNT] [decimal](18, 3) NULL,
+	[CODE] [varchar](50) NULL,
+	[REMARK] [varchar](max) NULL,
+	[CPR] [varchar](50) NULL,	
+	[PAYMENTDATE] [datetime] NULL,
+	[PAYMENT_TYPE] [varchar](50) NULL,
+	[ACCOUNTNO] [varchar](50) NULL,
+	[ORIGINALPREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[MOBILENUMBER] [varchar](50) NULL,
+	[SOURCE] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[IsHIR] [bit] NULL,
+	[LINKID] [varchar](250) NULL,
+	[HIRStatus] [int] NULL,
+	[IsSaved] [bit] NULL,
+	[CHANNELID] [varchar](25) NULL,
+	[UPDATEDPTRANSACTIONDATETIME] [datetime] NULL,
+	[IsAuthorized] [bit] NULL,
+	[HIRReason] [varchar](max) NULL,	
+ CONSTRAINT [PK_BK_Motor] PRIMARY KEY CLUSTERED 
+(
+	[MOTORID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+CREATE TABLE [dbo].[MotorCover](
+	[MOTORCID] [bigint] IDENTITY(1,1) NOT NULL,
+	[MOTORID] [bigint] NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[COVERCODE] [varchar](50) NULL,
+	[COVERAMOUNT] [decimal](18, 3) NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](50) NULL,
+	[PERCENTAGE] [decimal](18, 6) NULL,
+	[FORMULATYPE] [varchar](50) NULL,
+	[FORMULAID] [varchar](50) NULL,
+	[TYPE] [varchar](50) NULL,
+	[TYPESERIALNO] [int] NULL,
+	[COVERCODEDESCRIPTION] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[LINKID] [varchar](250) NULL,
+	[REGISTRATIONNO] [varchar](50) NULL,
+	[VEHICLETYPE] [varchar](50) NULL,
+ CONSTRAINT [PK_BK_MotorCover] PRIMARY KEY CLUSTERED 
+(
+	[MOTORCID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+CREATE TABLE [dbo].[MotorLoads](
+	[MOTORLID] bigint IDENTITY(1,1) NOT NULL,
+	[MOTORID] bigint NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[LOADCODE] [varchar](50) NULL,
+	[LOADPERCENT] [decimal](18, 6) NULL,
+	[LOADDESCRIPTION] [varchar](50) NULL,
+	[LOADAMOUNT] [decimal](18, 3) NULL,
+	[FORMULATYPE] [varchar](50) NULL,
+	[FORMULAID] [varchar](50) NULL,
+	[TRANSACTIONBASEPREMIUM] [decimal](18, 3) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[LINKID] [varchar](250) NULL,
+	[REGISTRATIONNO] [varchar](50) NULL,
+	[VEHICLETYPE] [varchar](50) NULL,
+ CONSTRAINT [PK_BK_MotorLoads] PRIMARY KEY CLUSTERED 
+(
+	[MOTORLID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+/****** Object:  Table Home    Script Date: 3/27/2018 4:29:53 PM ******/
+
+
+CREATE TABLE [dbo].[Home](
+	[HOMEID] [Bigint] IDENTITY(1,1) NOT NULL,
+	AGENCY VARCHAR(50),
+	AGENTCODE varchar(50) null,
+	BRANCHCODE VARCHAR(50),
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[FINANCECOMPANYID] [varchar](50) NULL,
+	[TYPE] [varchar](50) NULL,
+	[ADDRESS1] [varchar](500) NULL,
+	[ADDRESS2] [varchar](500) NULL,
+	[CITYCODE] [varchar](50) NULL,
+	[STREETNO] [varchar](50) NULL,
+	[BLOCKNUMBER] [varchar](50) NULL,
+	[BUILDINGNAME] [varchar](50) NULL,
+	[STREETNAME] [varchar](50) NULL,
+	[DOMESTICHELP] [varchar](50) NULL,
+	[AGEOFBUILDING] [int] NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](50) NULL,
+	[COMMENCEDATE] [datetime] NULL,
+	[EXPIRYDATE] [datetime] NULL,
+	[FLATNO] [varchar](50) NULL,
+	[BUILDINGNO] [varchar](50) NULL,
+	[RSMDCOVER] [varchar](50) NULL,
+	[INSUREDCODE] [varchar](50) NULL,
+	[INSUREDNAME] [varchar](100) NULL,
+	[RENEWAL] [char](1) NULL,
+	[PREVIOUSDOCUMENTNO] [varchar](50) NULL,
+	[RENEWED] [char](1) NULL,
+	[CLAIMAMOUNT] [decimal](18, 3) NULL,
+	[JEWELLERYCOVER] [varchar](50) NULL,
+	[FFPNUMBER] [varchar](50) NULL,
+	[TRANSACTION_NO] [varchar](50) NULL,
+	[PAYMENT_TYPE] [varchar](50) NULL,
+	[PAYMENT_AUTHORIZATION_CODE] [varchar](50) NULL,
+	[ORIGINALPREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[MOBILENUMBER] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[IsHIR] [bit] NULL,
+	[LINKID] [varchar](250) NULL,
+	[HIRStatus] [int] NULL,
+	[IsSaved] [bit] NULL,
+	[Source] [varchar](20) NULL,
+	[IsActive] [bit] NULL,
+	[HIRReason] [varchar](max) NULL,
+	[PAYMENTDATE] [datetime] NULL,
+	[DiscountPercent] [decimal](18, 2) NULL,
+	[LoadAmount] [decimal](18, 3) NULL,
+	[DiscountAmount] [decimal](18, 3) NULL,
+	[Code] [varchar](50) NULL,
+	[Remarks] [varchar](max) NULL,
+	[CPR] [varchar](50) NULL,
+	[LASTYEAREXPIRYDATE] [datetime] NULL,
+ CONSTRAINT [PK_BK_Home] PRIMARY KEY CLUSTERED 
+(
+	[HOMEID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+CREATE TABLE [dbo].[HomeItems](
+	[HOMEIID] [bigint] IDENTITY(1,1) NOT NULL,
+	[HOMEID] [bigint] NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[ITEMSERIALNO] [int] NULL,
+	[ITEMCODE] [varchar](50) NULL,
+	[ITEMNAME] [varchar](50) NULL,
+	[FORMULATYPE] [varchar](50) NULL,
+	[FORMULAID] [varchar](50) NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[PREMIUMRATE] [decimal](18, 7) NULL,
+	[LIMITVALUE] [decimal](18, 7) NULL,
+	[LIMITRATE] [decimal](18, 7) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[LINKID] [varchar](250) NULL,
+ CONSTRAINT [PK_BK_HOMEITEMS] PRIMARY KEY CLUSTERED 
+(
+	[HOMEIID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[HomeSubItems](
+	[HOMESID] [Bigint] IDENTITY(1,1) NOT NULL,
+	[HOMEID] [Bigint] NULL,
+	[LINKID] [varchar](250) NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[ITEMSERIALNO] [int] NULL,
+	[ITEMCODE] [varchar](50) NULL,
+	[ITEMNAME] [varchar](50) NULL,
+	[SUBITEMSERIALNO] [int] NULL,
+	[SUBITEMCODE] [varchar](50) NULL,
+	[SUBITEMNAME] [varchar](50) NULL,
+	[DESCRIPTION] [varchar](max) NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[REMARKS] [varchar](max) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[HOMESID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[HomeDomesticHelp](
+	[HOMEDID] [bigint] IDENTITY(1,1) NOT NULL,
+	[HOMEID] [bigint] NULL,
+	[LINKID] [varchar](250) NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[LINENO] [int] NULL,
+	[SERIALNO] [int] NULL,
+	[ITEMSERIALNO] [int] NULL,
+	[ITEMCODE] [varchar](50) NULL,
+	[ITEMNAME] [varchar](50) NULL,
+	[MEMBERSERIALNO] [int] NULL,
+	[NAME] [varchar](50) NULL,
+	[CPRNUMBER] [varchar](50) NULL,
+	[TITLE] [varchar](25) NULL,
+	[SEX] [char](1) NULL,
+	[AGE] [int] NULL,
+	[DATEOFBIRTH] [date] NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[HOMEDID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+/****** Object:  Domestic Help    Script Date: 3/27/2018 4:29:53 PM ******/
+
+CREATE TABLE [dbo].[DomesticHelp](
+	[DOMESTICID] bigint IDENTITY(1,1) NOT NULL,
+	[DOCUMENTNO] [varchar](50)  not NULL,
+	AGENCY VARCHAR(50),
+	AGENTCODE varchar(50) null,
+	BRANCHCODE VARCHAR(50),
+	[INSUREDCODE] [varchar](50) NULL,
+	[INSUREDNAME] [varchar](100) NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[EXPIRYDATE] [datetime] NULL,
+	[REMARKS] [varchar](max) NULL,
+	[TYPE] [varchar](50) NULL,
+	[ADDRESS1] [varchar](50) NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](25) NULL,
+	[DATEOFSUBMISSION] [datetime] NULL,
+	[COMMENCEDATE] [datetime] NULL,
+	[IDENTITYNO] [varchar](50) NULL,
+	[RENEWAL] [char](1) NULL,
+	[PREVIOUSDOCUMENTNO] [varchar](50) NULL,
+	[RENEWED] [char](1) NULL,
+	[INSURANCEPERIOD] [int] NULL,
+	[RENEWALCOUNT] [int] NULL,
+	[LASTYEARSUMINSURED] [decimal](18, 3) NULL,
+	[LASTYEARPREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[LASTYEAREXPIRYDATE] [datetime] NULL,
+	[LOADAMOUNT] [decimal](18,3) NULL,
+	[DISCOUNTAMOUNT] [decimal](18,3) NULL,
+	[CODE] [varchar](50) NULL,
+	[REMARK] [varchar](max) NULL,
+	[CPR] [varchar](50) NULL,
+	[TRANSACTION_NO] [varchar](50) NULL,
+	[PAYMENTDATE] [datetime] NULL,
+	[PAYMENT_TYPE] [varchar](50) NULL,
+	[PAYMENT_AUTHORIZATION_CODE] [varchar](50) NULL,
+	[ORIGINALPREMIUMAMOUNT] [decimal](18,3) NULL,
+	[MOBILENUMBER] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[HIRStauts] [bit] NULL,
+	[LINKID] [varchar](250) NULL,
+	[HIRStatus] [int] NULL,
+	[IsSaved] [bit] NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[Source] [varchar](20) NULL,
+	[IsActive] [bit] NULL,
+	[HIRReasonID] [int] NULL,
+	[IsHIR] [bit] NULL,
+	[DiscountPercent] [decimal](18, 2) NULL,
+ CONSTRAINT [PK_BK_DomesticHelp] PRIMARY KEY CLUSTERED 
+(
+	[DOMESTICID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+CREATE TABLE [dbo].[DomesticHelpMemberDetails](
+	[DOMESTICMID] bigint IDENTITY(1,1) NOT NULL,
+	[DOMESTICID] bigint NULL,
+	[DOCUMENTNO] [varchar](50)  not NULL,
+	[INSUREDCODE] [varchar](50) NULL,
+	[INSUREDNAME] [varchar](50) NULL,
+	[SUMINSURED] [decimal](18, 0) NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[EXPIRYDATE] [datetime] NULL,
+	[REMARKS] [varchar](max) NULL,
+	[TYPE] [varchar](50) NULL,
+	[ADDRESS1] [varchar](50) NULL,
+	[OCCUPATION] [varchar](50) NULL,
+	[NATIONALITY] [varchar](50) NULL,
+	[PASSPORT] [varchar](50) NULL,
+	[DOB] [date] NULL,
+	[SEX] [char](1) NULL,
+	[ITEMSERIALNO] [int] NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](50) NULL,
+	[DATEOFSUBMISSION] [datetime] NULL,
+	[COMMENCEDATE] [date] NULL,
+	[IDENTITYNO] [varchar](50) NULL,
+	[OCCUPATIONOTHER] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[LINKID] [varchar](250) NULL,
+ CONSTRAINT [PK_BK_DomesticHelpMemberDetails] PRIMARY KEY CLUSTERED 
+(
+	[DOMESTICMID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  TravelPolicy Help    Script Date: 3/27/2018 4:29:53 PM ******/
+
+CREATE TABLE [dbo].[Travel](
+	[TRAVELID] bigint IDENTITY(1,1) NOT NULL,
+	[DOCUMENTNO] [varchar](50) not NULL ,
+	AGENCY VARCHAR(50),
+	AGENTCODE varchar(50) null,
+	BRANCHCODE VARCHAR(50),
+	[INSUREDCODE] [varchar](50) NULL,
+	[INSUREDNAME] [varchar](100) NULL,
+	[SUMINSURED] [decimal](38, 3) NULL,
+	[PREMIUMAFTERDISCOUNT] [decimal](18, 3) NULL,
+	[COMMENCEDATE] [datetime] NULL,
+	[EXPIRYDATE] [datetime] NULL,
+	[MAINCLASS] [varchar](50) NULL,
+	[SUBCLASS] [varchar](50) NULL,
+	[DATEOFSUBMISSION] [date] NULL,
+	[OTHERINSUREDNAME] [varchar](50) NULL,
+	[PASSPORT] [varchar](50) NULL,
+	[RENEWAL] [char](1) NULL,
+	[PREVIOUSDOCUMENTNO] [varchar](50) NULL,
+	[OCCUPATION] [varchar](50) NULL,
+	[RENEWED] [char](1) NULL,
+	[PERIODOFCOVER] [varchar](25) NULL,
+	[FFPNUMBER] [varchar](50) NULL,
+	[RENEWALCOUNT] [int] NULL,
+	[LASTYEARSUMINSURED] [decimal](18, 3) NULL,
+	[LASTYEARPREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[LASTYEAREXPIRYDATE] [date] NULL,
+	[LOADAMOUNT] [decimal](18, 3) NULL,
+	[DISCOUNTAMOUNT] [decimal](18, 3) NULL,
+	[CODE] [varchar](50) NULL,
+	[REMARK] [varchar](max) NULL,
+	[CPR] [varchar](50) NULL,
+	[TRANSACTION_NO] [varchar](50) NULL,
+	[PAYMENTDATE] [date] NULL,
+	[PAYMENT_TYPE] [varchar](50) NULL,
+	[PAYMENT_AUTHORIZATION_CODE] [varchar](50) NULL,
+	[PREMIUMBEFOREDISCOUNT] [decimal](18, 3) NULL,
+	[MOBILENUMBER] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[IsHIR] [bit] NULL,
+	[LINKID] [varchar](250) NULL,
+	[HIRStatus] [int] NULL,
+	[IsSaved] [bit] NULL,
+	[Source] [varchar](20) NULL,
+	[IsActive] [bit] NULL,
+	[HIRReason] [varchar](max) NULL,
+	[DiscountPercent] [decimal](18, 2) NULL,
+	[CoverageType] [varchar](500) NULL,
+ CONSTRAINT [PK_BK_TRAVEL] PRIMARY KEY CLUSTERED 
+(
+	[TRAVELID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+CREATE TABLE [dbo].[TravelMembers](
+	[TRAVELMID] bigint IDENTITY(1,1) NOT NULL,
+	[TRAVELID] bigint NULL,
+	[DOCUMENTNO] [varchar](50) not NULL,
+	[ITEMSERIALNO] [int] NULL,
+	[ITEMNAME] [varchar](50) NULL,
+	[SUMINSURED] [decimal](18, 3) NULL,
+	[FOREIGNSUMINSURED] [decimal](18, 3) NULL,
+	[CATEGORY] [varchar](50) NULL,
+	[TITLE] [nchar](10) NULL,
+	[SEX] [nchar](10) NULL,
+	[DATEOFBIRTH] [date] NULL,
+	[AGE] [int] NULL,
+	[PREMIUMAMOUNT] [decimal](18, 3) NULL,
+	[MAKE] [varchar](50) NULL,
+	[OCCUPATIONCODE] [varchar](50) NULL,
+	[CPR] [varchar](50) NULL,
+	[PASSPORT] [varchar](50) NULL,
+	[FIRSTNAME] [varchar](50) NULL,
+	[MIDDLENAME] [varchar](50) NULL,
+	[LASTNAME] [varchar](50) NULL,
+	[CREATEDBY] [int] NULL,
+	[CREATEDDATE] [datetime] NULL,
+	[UPDATEDBY] [int] NULL,
+	[UPDATEDDATE] [datetime] NULL,
+	[LINKID] [varchar](250) NULL,
+ CONSTRAINT [PK_BK_TravelMembers] PRIMARY KEY CLUSTERED 
+(
+	[TRAVELMID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+/****** Object:  CategoryMaster Help    Script Date: 3/27/2018 4:29:53 PM ******/
+
+
+Create table PolicyCategory
+(
+[LINKID] [varchar](250) not NULL,
+[DOCUMENTNO] [varchar](50) NOT NULL,
+[DOCUMENTTYPE][varchar](50) NULL,
+[ENDORSEMENTNO] [varchar](50) NULL,
+[ENDORSEMENTCOUNT] [varchar](50) NULL,
+[AGENTCODE] [varchar](50) NULL,
+[LINENO] [varchar](50) NULL,
+[CATEGORY] [varchar](50) NULL,
+[CODE] [varchar](50) NULL,
+[VALUETYPE] [varchar](50) NULL,
+[VALUE] DECIMAL(18,2),
+[PREMIUM] DECIMAL(18,3),
+[CALCULATEDVALUE] DECIMAL(18,3) NULL,
+[PARENTLINKID] [varchar](50) NULL
+)
+
+
+
+
+Create Table PolicyCategoryMaster
+(
+AGENCY VARCHAR(50),
+AGENTCODE VARCHAR(50) NOT NULL,
+ACCOUNTCODDE VARCHAR(50),
+MAINCLASS VARCHAR(50),
+SUBCLASS VARCHAR(50),
+CATEGORY VARCHAR(50),
+CODE VARCHAR(50),
+VALUETYPE VARCHAR(50),
+VALUE DECIMAL(18,3),
+EFFECTIVEFROM DATETIME,
+EFFECTIVETO DATETIME,
+[STATUS] VARCHAR(50),
+[IsActive] bit
+)
+GO
+
+CREATE TABLE DROPDOWN_LOOKUPMASTER
+(
+LOOKUPTYPECODE VARCHAR(50),
+LOOKUPTYPENAME VARCHAR(50),
+CODE VARCHAR(50),
+VALUE VARCHAR(50),
+ISSTATUS BIT
+)
+
+GO
+CREATE TABLE BRANCHMASTER
+(
+AGENCY VARCHAR(50),
+AGENTCODE VARCHAR(50),
+AGENTBRANCH VARCHAR(50),
+BRANCHNAME VARCHAR(50),
+BRANCHADDRESS VARCHAR(MAX),
+TELEPHONENO VARCHAR(20),
+INCHARGE VARCHAR(100),
+EMAIL VARCHAR(50)
+)
+
+go
+
+Create table USER_MASTER
+(
+AGENCY VARCHAR(50),
+AGENTCODE VARCHAR(50),
+AGENTBRANCH VARCHAR(50),
+USERID VARCHAR(50),
+USERNAME VARCHAR(50),
+CREATEDDATE DATETIME,
+PASSWORD VARCHAR(25),
+PASSWORDEXPIRYDATE DATETIME,
+MOBILE VARCHAR(10),
+EMAIL VARCHAR(50),
+IsActive bit,
+STAFFNO INT
+)
+
+
+create table ENDORSEMENT_MASTER
+(
+BRANCH VARCHAR(50),
+AGENTCODE VARCHAR(50),
+MAINCLASS VARCHAR(50),
+SUBCLASS VARCHAR(50),
+ENDORSEMENTTYPE VARCHAR(50),
+DESCRIPTION VARCHAR(50),
+WORDINGS VARCHAR(MAX),
+STATUS VARCHAR(50)
+)
+GO
+
+Create Table [dbo].[MotorExcess]
+(
+ID int identity(1,1),
+COMPANYCODE nvarchar(25),
+UNITCODE nvarchar(25),
+FUNDTYPE nvarchar(25),
+TYPE nvarchar(25),
+MANUFACTURERID nvarchar(50),
+MANUFACTURERIDDESCRIPTION nvarchar(50),
+MODELID nvarchar(50),
+MODELIDDESCRIPTION nvarchar(50),
+[YEAR] int,
+VALUE int,
+CAPACITY int,
+BODYTYPE nvarchar(25),
+CREATEBY nvarchar(25),
+CREATEDT datetime,
+MODIFYBY nvarchar(25),
+MODIFYDT datetime,
+CATEGORY nvarchar(25),
+EXCESS decimal,
+VEHICLETYPE nvarchar(25),
+NUMBEROFDOORS nvarchar(25),
+SEATINGCAPACITY nvarchar(25),
+STANDINGCAPACITY nvarchar(25),
+DEPRECIATIONRATE nvarchar(25),
+LOADINGFACTOR nvarchar(25),
+VEHICLEVALUEFORAUTOMATIC nvarchar(25),
+VEHICLEVALUEFORFULLOPTION nvarchar(25),
+DEALERCODE nvarchar(25),
+DEALERNAME nvarchar(25),
+REGIONCODE nvarchar(25),
+FUELTYPE nvarchar(25),
+CYLINDERCAPACITY nvarchar(25),
+DEPRECIATIONTYPE nvarchar(25),
+BRANDLOADING nvarchar(25),
+TPBODYLOADING nvarchar(25),
+ENABLEFORECONPROD nvarchar(25),
+NEWEXCESSAMOUNT nvarchar(25)
+)
+
+Create table MotorProductCovers
+(
+AGENCY varchar(50),
+AGENTCODE VARCHAR(50),
+MAINCLASS VARCHAR(50),
+SUBCLASS VARCHAR(50),
+POLICYCOVER VARCHAR(50),
+RATES DECIMAL(18,3)
+)
+
+CREATE TABLE MotorProductLoads
+(
+AGENCY varchar(50),
+AGENTCODE VARCHAR(50),
+LOADINGTYPE VARCHAR(50),
+RATES DECIMAL(18,3)
+)
+
+CREATE TABLE MotorProductRates
+(
+AGENCY varchar(50),
+AGENTCODE VARCHAR(50),
+MAINCLASS VARCHAR(50),
+SUBCLASS VARCHAR(50),
+NEWVEHICLERATE DECIMAL(18,6),
+OLDVEHICLERATE DECIMAL(18,6)
+)
+
+--Drop table InsuranceProduct_Master
+Create table InsuranceProduct_Master
+(
+ID int primary key identity(1,1) not null,
+AGENCY varchar(50),
+AGENTCODE VARCHAR(50),
+MAINCLASS VARCHAR(50),
+SUBCLASS VARCHAR(50),
+EFFECTIVEDATEFROM DATE,
+EFFECTIVEDATETO DATE,
+ISACTIVE BIT,
+CREATEDDATE DATETIME,
+UPDATEDDATE DATETIME
+)
+GO
+
+CREATE TABLE [dbo].[BK_Audit](
+	[USERNAME] [nvarchar](50) NULL,
+	[IPADDRESS] [nvarchar](50) NULL,
+	[LOGINDATE] [datetime] NULL,
+	[LOGINSTATUS] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+Create Table MotorCoverMaster
+(
+COVERID int identity(1,1) PRIMARY KEY,
+COVERSDescription varchar(max)
+)
+
+Create table MotorProductCover
+(
+ProductCoverID int identity(1,1) Primary key,
+AGENCY VARCHAR(50),
+AGENTCODE varchar(50),
+MAINCLASS varchar(50),
+SUBCLASS VARCHAR(50),
+COVERID INT FOREIGN KEY REFERENCES MotorCoverMaster(COVERID),
+IsCovered char,
+Rate decimal(18,3),
+COVERSTYPE varchar(max),
+CreatedBy varchar(500),
+UpdatedBy varchar(500)
+)
+go
+
+
+Create Table MotorProductRates_Master
+(
+ProductRatesID int identity(1,1) Primary key,
+AGENCY VARCHAR(50),
+AGENTCODE varchar(50),
+MAINCLASS varchar(50),
+SUBCLASS VARCHAR(50),
+Rate decimal(18,3),
+CreatedBy varchar(500),
+UpdatedBy varchar(500)
+)
+
+Go
+
+
+
+
+
+/*Admin*/
+
+CREATE TABLE [dbo].[SP_HIRRequestDocuments](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[InsuredCode] [varchar](50) NULL,
+	[DocumentNo] [varchar](50) NULL,
+	[LinkID] [varchar](200) NULL,
+	[FilesURL] [varchar](max) NULL,
+	[FileName] [varchar](max) NULL,
+	[CreatedDate] [datetime] NULL
+) 
+
+go
+
+CREATE TABLE [dbo].[SP_EMAILMESSAGEAUDIT](
+	[MessageKey] [varchar](500) NULL,
+	[Message] [varchar](max) NULL,
+	[InsuredCode] [varchar](250) NULL,
+	[PolicyNo] [varchar](250) NULL,
+	[LinkId] [varchar](250) NULL,
+	[InsuredType] [varchar](500) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Subject] [nvarchar](500) NULL,
+	[TrackId] [nvarchar](50) NULL
+)
+
+go
+
+CREATE TABLE [dbo].[SP_HIRStatus](
+	[StatusID] [int] IDENTITY(1,1) NOT NULL,
+	[HIRStatus] [nvarchar](50) NULL,
+
+	)
+SELECT * FROM aspnet_Membership
+SELECT * FROM aspnet_Users
+SELECT * FROM aspnet_Roles

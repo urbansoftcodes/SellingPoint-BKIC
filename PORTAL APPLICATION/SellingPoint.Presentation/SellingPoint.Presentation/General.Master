@@ -1,0 +1,547 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="General.master.cs" Inherits="BKIC.SellingPoint.Presentation.General"  %>
+
+<%@ Register Src="~/PageLoader.ascx" TagPrefix="pageLoad" TagName="PageLoaderIndicator" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolKit" %>
+
+<!DOCTYPE html>
+
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; IE=12; IE=11; IE=10; IE=9; IE=8; IE=7" />
+    <meta charset="utf-8" />
+    <title>BKIC-SellingPoint</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/common.css" />
+
+    <!-- dropdown styles -->
+    <link href="assets/css/chosen.css" rel="stylesheet" />
+
+    <!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="assets/css/customn.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" />
+    <link href="assets/css/acetest.css" rel="stylesheet" />
+
+    <!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="assets/customjs/ace-extra.min.js"></script>
+
+    <link href="assets/css/component.css" rel="stylesheet" />
+    <link href="assets/css/export.css" rel="stylesheet" />
+    <link href="assets/css/flipclock.css" rel="stylesheet" />
+    <link href="assets/css/circles.css" rel="stylesheet" />
+    <link href="assets/css/style_grid.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" /> 
+    <link href="assets/css/green.css" rel="stylesheet" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" />   
+
+    <script src="assets/customjs/jquery-2.1.4.min.js"></script>
+    <script src="assets/customjs/bootstrap-3.1.1.min.js"></script> 
+    <script src="assets/customjs/jquery-ui.min.js"></script>
+    <script src="assets/customjs/jquery.validate.min.js"></script>  
+    <script src="assets/customjs/ace.min.js"></script> 
+    <link href="assets/customjs/MasterPage/chosen.min.css" rel="stylesheet" />
+ 
+
+    <script>
+        function ShowErrorMessage() {
+            //if any page popup shows hide it before .
+            $('#myModal').modal('hide');
+            $(".modal-backdrop").remove();
+            $('#errorModal').modal('show');
+
+        }
+        function closeErrorPopup() {
+            $('#errorModal').modal('hide');
+            $(".modal-backdrop").remove();
+        }
+       function ShowAuthorize() {
+            var approved = confirm("Are you sure want to authorize this endorsement ?")
+            if (approved) {
+                showPageLoader();
+                return true;
+            }
+            else {
+                return false;
+            }         
+        }
+          function ShowDelete() {
+            var approved = confirm("Are you sure want to delete this endorsement ?")
+            if (approved) {
+                showPageLoader();
+                return true;
+            }
+            else {
+                return false;
+            }          
+        }
+         function ShowClaimPopup() {
+            $('#claimWarning').modal('show');
+        }
+        function CloseClaimPopup() {
+            $('#claimWarning').modal('hide');
+            $(".modal-backdrop").remove();
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="no-skin">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+             <Scripts>
+               <asp:ScriptReference Path="~/assets/customjs/Refocus.js" />        
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:Label ID="lblhcsrf" runat="server" Text="" Visible="false"></asp:Label>
+        <asp:HiddenField ID="AgencyHidden" runat="server"/>
+        <asp:HiddenField ID="AgentCodeHidden" runat="server"/>
+        <asp:HiddenField ID="AgentBranch" runat="server"/>
+        <asp:HiddenField ID="WebApiUrlHidden" runat="server"/>
+        <asp:UpdatePanel runat="server" ID="pageLoadUpdatePanel" Style="display: none">
+            <ContentTemplate>
+                <pageLoad:PageLoaderIndicator runat="server" ID="loadPageUC" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdatePanel runat="server" ID="updatePanel">
+            <ContentTemplate>
+                <asp:Panel runat="server">
+                    <div class="container" runat="server">
+                        <div class="row">
+                            <div class="modal" id="errorModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
+                                           <h4 class="modal-title" runat="server" id="modelTitle"></h4>
+                                        </div>
+                                        <div class="modal-body" runat="server" id="errorBodyText">
+                                            User executed operation is failed.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <asp:Button ID="btnErrorOK" type="button" OnClientClick="closeErrorPopup();" Text="OK" runat="server" CssClass="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                        </div>
+                    </div>
+                </asp:Panel>
+                <asp:Panel runat="server">
+                        <div class="container" runat="server">
+                            <div class="row">
+                                <div class="modal" id="claimWarning">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">Renewal Claim</h4>
+                                            </div>
+                                            <div class="modal-body" runat="server" id="txtClaimBody">
+                                                This policy already have claim, admin only authorize this policy !.
+                                            </div>
+                                            <div class="modal-footer">                                                                                             
+                                                <asp:Button ID="Button4" type="button" OnClientClick="CloseClaimPopup();" Text="OK" runat="server" CssClass="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <!-- banner -->
+        <div class="wthree_agile_admin_info">
+            <!-- /w3_agileits_top_nav-->
+            <!-- /nav-->
+            <div class="w3_agileits_top_nav">
+                <ul id="gn-menu" class="gn-menu-main">
+                    <!-- /nav_agile_w3l -->
+                    <%-- Tried NeedTo Check work or not --%>
+                    <li class="gn-trigger" runat="server" id="admin">
+                        <a class="gn-icon gn-icon-menu"><i class="fa fa-bars" aria-hidden="true"></i><span>Menu</span></a>
+                        <nav class="gn-menu-wrapper">
+                            <div class="gn-scroller scrollbar1">
+                                <ul class="gn-menu agile_menu_drop">
+                                    <li><a href="Homepage.aspx"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                                    <li><a href="QuotePage.aspx"><i class="fa fa-adjust"></i>Quote</a></li>
+                                    <li class="sub-menu dcjq-parent-li" id="menuMotorInsurance" runat="server">
+                                        <a id="lbtnMotor" href="#" class="dcjq-parent"><i class="fa fa-cab"></i>
+                                            <span>Motor Insurance</span>
+                                            <i class="fa fa-angle-down">
+                                            </i>
+                                        </a>
+                                            <ul class="sub" style="display: none;">
+                                                <li>
+                                                    <a id="lbtnMotorInsurance" href="MotorInsurance.aspx"><i class="fa fa-long-arrow-right"></i> Add New</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lbtnMotorOraclePolicy" href="MotorOracleRenewal.aspx"><i class="fa fa-long-arrow-right"></i> Oracle Renewal</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lbtnMotorSystemPolicy" href="MotorSystemPolicyRenewal.aspx"><i class="fa fa-long-arrow-right"></i> System Renewal</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lbtnMotorInsuranceHIR" href="MotorHIRSearch.aspx"><i class="fa fa-long-arrow-right"></i> HIR</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lbtnMotorInsurancePolicy" href="MotorInsurancePolicy.aspx"><i class="fa fa-long-arrow-right"></i> Active Policy</a>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="menuTravelInsurance" runat="server">
+                                        <a id="lbtnTravel" href="#" class="dcjq-parent">
+                                            <i class="fa fa-plane"></i>
+                                            <span>Travel Insurance</span><i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub" style="display: none;">
+                                            <li>
+                                                <a id="lbtnTravelInsurance" href="Travelnsurance.aspx"><i class="fa fa-long-arrow-right"></i> Add New</a>
+                                            </li>
+                                            <li>
+                                                <a id="lbtnTravelInsuranceHIR" href="TravelHIRSearch.aspx"><i class="fa fa-long-arrow-right"></i> HIR</a>
+                                            </li>
+                                            <li>
+                                                <a id="lbtnTravelInsurancePolicy" href="TravelInsuranceActivePolicy.aspx"><i class="fa fa-long-arrow-right"></i> Active Policy</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="menuHomeInsurance" runat="server">
+                                        <a id="lbtnHome" href="#" class="dcjq-parent">
+                                            <i class="fa fa-home"></i>
+                                            <span>Home Insurance</span>
+                                            <i class="fa fa-angle-down">
+                                            </i>
+                                        </a>
+                                        <ul class="sub" style="display: none;">
+                                            <li>
+                                                <a id="lbtnHomeInsurance" href="HomeInsurancePage.aspx"><i class="fa fa-long-arrow-right"></i> Add New</a>
+                                            </li>
+                                            <li>
+                                                <a id="lbtnHomeOracleRenewal" href="HomeOracleRenewal.aspx"><i class="fa fa-long-arrow-right"></i> Oracle Renewal</a>
+                                            </li>
+                                             <li>
+                                                <a id="lbtnHomeRenewal" href="HomeSystemRenewal.aspx"><i class="fa fa-long-arrow-right"></i> System Renewal</a>
+                                            </li>
+                                            <li>
+                                                <a id="lbtnHomeInsuranceHIR" href="HomeHIRSearch.aspx"><i class="fa fa-long-arrow-right"></i> HIR</a></li>
+                                            <li>
+                                                <a id="lbtnHomeInsurancePolicy" href="HomeInsuranceActivePolicy.aspx">
+                                                    <i class="fa fa-long-arrow-right"></i> Active Policy</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="menuDomesticInsurance" runat="server">
+                                        <a id="lbtnDomestic" href="#" class="dcjq-parent">
+                                            <i class="fa fa-female"></i>
+                                            <span>Domestic Help Insurance</span><i class="fa fa-angle-down"></i></a>
+
+                                        <ul class="sub" style="display: none;">
+                                            <li>
+                                                <a id="lbtnDomesticInsurance" href="DomesticHelp.aspx"><i class="fa fa-long-arrow-right"></i> Add New</a>
+                                            </li>
+                                            <li>
+                                                <a id="lbtnDomesticInsuranceHIR" href="DomesticHIRSearch.aspx"><i class="fa fa-long-arrow-right"></i>HIR</a>
+                                            </li>
+                                            <li>
+                                               <a id="lbtnDomesticInsurancePolicy" href="DomesticHelpActivePolicy.aspx"><i class="fa fa-long-arrow-right"></i>Active Policy</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="lstAgents" runat="server">
+                                        <a id="lbtnAgents" href="#" class="dcjq-parent">
+                                            <i class="fa fa-group"></i><span>Agents</span><i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub" style="display: none;">
+                                            <li><a href="AgentMaster.aspx"><i class="fa fa-plus-square" aria-hidden="true"></i><span>Add Agency</span></a>
+                                            </li>
+                                            <li><a href="BranchMaster.aspx"><i class="fa fa-share-square-o" aria-hidden="true"></i><span>Add Branch</span></a>
+                                            </li>
+                                            <li><a href="CategoryMaster.aspx"><i class="fa fa-share-square-o" aria-hidden="true"></i><span>Add Commission</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="lstEndorsement" runat="server">
+                                        <a id="lbtnEndorsements" href="#" class="dcjq-parent"><i class="fa fa-clone"></i><span>Endorsements</span><i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub" style="display: none;">
+                                            <li class="sub-menu dcjq-parent-li">
+                                                <a class="dcjq-parent" id="lbtnMotorEndorsement" href="#"><i class="fa fa-truck"></i><span>Motor Endorsement</span><i class="fa fa-angle-down"></i></a>
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                    <li>
+                                                        <a id="" href="MotorTransferEndorsement.aspx"><i class="fa fa-share"></i>Transfer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="" href="MotorExtentEndorsement.aspx"><i class="fa fa-chain"></i>Extension</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="" href="MotorAddRemoveBankEndorsement.aspx"><i class="fa fa-briefcase"></i>Add/Remove Bank</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="" href="MotorChangeRegistrationEndorsement.aspx"><i class="fa fa-exchange"></i>Change Registration</a>
+                                                    </li>                                                   
+                                                    <li>
+                                                        <a id="" href="MotorAddCoverEndorsement.aspx"><i class="fa fa-exchange"></i>Add Cover</a>
+                                                    </li>                                                   
+                                                    <li>
+                                                        <a id="" href="MotorChangeExcessEndorsement.aspx"><i class="fa fa-exchange"></i>Change Excess</a>
+                                                    </li>                                                      
+                                                    <li>
+                                                        <a id="" href="MotorChangeSumInsuredEndorsement.aspx"><i class="fa fa-exchange"></i>Change SumInsured</a>
+                                                    </li> 
+                                                    <li>
+                                                        <a id="" href="MotorChangePremiumEndorsement.aspx"><i class="fa fa-exchange"></i>Change Premium</a>
+                                                    </li> 
+                                                     <li>
+                                                        <a id="" href="MotorInternalEndorsement.aspx"><i class="fa fa-exchange"></i>Internal</a>
+                                                    </li> 
+                                                    <li>
+                                                        <a id="" href="MotorCancelEndorsement.aspx"><i class="fa fa-exchange"></i>Cancel</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu dcjq-parent-li">
+                                                <a id="lbtnHomeEndorsement" href="#" class="dcjq-parent"><i class="fa fa-home"></i>Home Endorsement<i class="fa fa-angle-down"></i></a>
+
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                    <li>
+                                                        <a href="HomeAddRemoveBankEndorsement.aspx"><i class="fa fa-share"></i>Add Remove Bank</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="HomeAddRemoveDomesticHelpEndorsement.aspx"><i class="fa fa-share"></i>Add Remove Domestic </a>
+                                                    </li> 
+                                                     <li>
+                                                        <a href="HomeCorrectAddressEndorsement.aspx"><i class="fa fa-share"></i>Correct Address</a>
+                                                    </li> 
+                                                     <li>
+                                                        <a href="HomeChangeSumInsuredEndorsement.aspx"><i class="fa fa-share"></i>Change SumInsured</a>
+                                                    </li> 
+                                                     <li>
+                                                        <a href="HomeInternalEndorsement.aspx"><i class="fa fa-share"></i>Internal Endorsement</a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="HomeCancelEndorsement.aspx"><i class="fa fa-share"></i>Cancel</a>
+                                                    </li> 
+                                                </ul>
+                                    </li>
+                                      <li>
+                                        <a id="lbtnTravelEndorsement" href="#" class="dcjq-parent"><i class="fa fa-fighter-jet"></i>Travel Endorsement<i class="fa fa-angle-down"></i></a>
+                                   
+                                    <ul class="sub" style="display: none; padding-left: 12px;">
+                                                    <li>
+                                                        <a href="TravelChangeMemberEndorsement.aspx"><i class="fa fa-share"></i>Correct Member</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="TravelAddRemoveMemberEndorsement.aspx"><i class="fa fa-share"></i>Add Remove Member</a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="TravelChangePremiumEndorsement.aspx"><i class="fa fa-share"></i>Change Premium</a>
+                                                    </li>
+                                                     <li>
+                                                        <a href="TravelCancelEndorsement.aspx"><i class="fa fa-share"></i>Cancel</a>
+                                                    </li>
+                                                </ul>    
+                                    </li>
+                                </ul>
+                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="lstReports" runat="server">
+                                        <a id="lbtnReports" href="#" class="dcjq-parent"><i class="fa fa-line-chart"></i><span>Reports</span><i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub" style="display: none;">
+                                            <li class="sub-menu dcjq-parent-li" id="Li1" runat="server">
+                                                <a class="dcjq-parent" href="#"><i class="fa fa-long-arrow-right"></i>Motor<i class="fa fa-angle-down"></i></a>
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                     <li>
+                                                         <a id="lbtnMotorMainReport" href="MotorMainReport.aspx"><i class="fa fa-file-text"></i>Main Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorAgeReport" href="MotorAgeReport.aspx"><i class="fa fa-file-text"></i>Insured Age Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorBranchReport" href="MotorBranchReport.aspx"><i class="fa fa-tag"></i>By Branch Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorUserReport" href="MotorUserReport.aspx"><i class="fa fa-long-arrow-right"></i>By User Report</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu dcjq-parent-li" id="Li3" runat="server">
+                                                <a class="dcjq-parent" href="#"><i class="fa fa-long-arrow-right"></i>Home<i class="fa fa-angle-down"></i></a>
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                    <li>
+                                                       <a id="lbtnHomeMainReport" href="HomeMainReport.aspx"><i class="fa fa-file-text"></i>Main Report</a>
+                                                   </li>
+                                                    <li>
+                                                        <a id="lbtnHomeBranchReport" href="HomeBranchReport.aspx"><i class="fa fa-file-text"></i>By Branch Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnHomeUserReport" href="HomeUserReport.aspx"><i class="fa fa-tag"></i>By User Report</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu dcjq-parent-li" id="Li4" runat="server">
+                                                <a class="dcjq-parent" href="#"><i class="fa fa-long-arrow-right"></i>Travel<i class="fa fa-angle-down"></i></a>
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                     <li>
+                                                        <a id="lbtnTravelMainReport" href="TravelMainReport.aspx"><i class="fa fa-file-text"></i>Main Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnTravelBranchReport" href="TravelBranchReport.aspx"><i class="fa fa-file-text"></i>By Branch Report</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnTravelUserReport" href="TravelUserReport.aspx"><i class="fa fa-tag"></i>User Report</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="InsuredMaster.aspx"><i class="fa fa-user" aria-hidden="true"></i><span>Add Insured</span></a>
+                                    </li>
+                                    <li id="addNewUser" runat="server">
+                                        <a href="UserMaster.aspx">
+                                            <i class="fa fa-user-plus" aria-hidden="true">
+                                            </i><span>Add User</span>
+                                        </a>
+                                    </li>
+                                    <li class="sub-menu dcjq-parent-li" id="lstProduct" runat="server">
+                                                <a class="dcjq-parent" href="#"><i class="fa fa-long-arrow-right"></i>Products<i class="fa fa-angle-down"></i></a>
+                                                <ul class="sub" style="display: none; padding-left: 12px;">
+                                                     <li>
+                                                        <a id="lbtnMotorProduct" href="MotorProductMaster.aspx"><i class="fa fa-file-text"></i>Motor Products</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorVehicle" href="MotorVehicleMaster.aspx"><i class="fa fa-file-text"></i>Motor Vehicle</a>
+                                                    </li>
+                                                     <li>
+                                                        <a id="lbtnMotorYear" href="MotorMakeYear.aspx"><i class="fa fa-file-text"></i>Vehicle Year</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorEngineCC" href="MotorEngineCC.aspx"><i class="fa fa-file-text"></i>Motor Engine CC</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="lbtnMotorCover" href="MotorProductCover.aspx"><i class="fa fa-tag"></i>Motor Covers</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                    <li><a href="Login.aspx"><i class="fa fa-cogs" aria-hidden="true"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                            <!-- /gn-scroller -->
+                        </nav>
+                    </li>
+                    <!-- //nav_agile_w3l -->
+                    <li class="second logo">
+                        <h1><a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>BKIC </a></h1>
+                    </li>                   
+                     <li class="pull-right header_client_logo" runat="server" id="clientSecura" visible="false">
+                        <img src="assets/images/SecuraLogo.jpg" style="width: 156px; padding: 0;" />
+                    </li>
+                    <li class="pull-right header_client_logo" runat="server" id="clientTisco" visible="false">
+                        <img src="assets/images/TiscoLogo.jpg" style="height: 99%; padding: 0;" />
+                    </li> 
+                    <li class="second w3l_search">                        
+                    </li>                   
+                </ul>
+                <!-- //nav -->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- //w3_agileits_top_nav-->
+
+        <div class="main-container ace-save-state" id="main-container">
+            <script type="text/javascript">
+                try { ace.settings.loadState('main-container') } catch (e) { }
+            </script>
+
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div class="page-content">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--copy rights start here-->
+        <div class="copyrights">
+            <p>© 2019 BKIC. All Rights Reserved </p>
+        </div>
+        <!--copy rights end here-->
+
+        <!-- basic scripts -->
+        <!-- /amcharts -->
+        <script src="assets/customjs/amcharts.js"></script>
+        <script src="assets/customjs/serial.js"></script>
+        <script src="assets/customjs/export.js"></script>
+        <script src="assets/customjs/light.js"></script>
+
+        <!-- //amcharts -->       
+        <script src="assets/customjs/Chart.min.js"></script>
+        <script src="assets/customjs/modernizr.custom.js"></script>
+        <script src="assets/customjs/classie.js"></script>
+        <script src="assets/customjs/gnmenu.js"></script>
+        <script>
+            new gnMenu(document.getElementById('gn-menu'));
+        </script>
+        <!-- script-for-menu -->
+        <script type="text/javascript">
+            var clock;
+
+            $(document).ready(function () {
+
+                clock = $('.clock').FlipClock({
+                    clockFace: 'HourlyCounter'
+                });
+                $('li a.dcjq-parent').click(function () {
+                    $(this).toggleClass('active');
+                });
+                $('.gn-trigger').click(function () {
+                    $('#sidebar').toggleClass('active');
+                    $('#main-content').toggleClass('active')
+                });
+
+            });
+        </script>
+        <!-- /circle-->
+        <script src="assets/customjs/circles.js"></script>
+        <!-- //circle -->
+        <!--skycons-icons-->
+        <script src="assets/customjs/skycons.js"></script>
+        <!--//skycons-icons-->
+        <!-- //js -->
+        <script src="assets/customjs/screenfull.js"></script>
+        <script src="assets/customjs/flipclock.js"></script>
+        <script src="assets/customjs/bars.js"></script>
+        <script src="assets/customjs/jquery.nicescroll.js"></script>
+         <script src="assets/customjs/scripts.js"></script>
+        <script src="assets/customjs/nprogress.js"></script>
+        <script src="assets/customjs/icheck.min.js"></script>
+        <script src="assets/customjs/fastclick.js"></script>
+        <script src="assets/customjs/custom.min.js"></script>
+        <script src="assets/customjs/MasterPage/generalMasterPage.js"></script>
+        <script src="assets/customjs/MasterPage/chosen.jquery.min.js"></script>
+        <script src="assets/customjs/MasterPage/jquery.scrollintoview.min.js"></script>
+        <script src="assets/customjs/MasterPage/fetchPolicies.js"></script>
+    </form>
+</body>

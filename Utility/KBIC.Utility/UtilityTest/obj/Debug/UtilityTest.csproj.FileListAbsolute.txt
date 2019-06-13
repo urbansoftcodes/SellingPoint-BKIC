@@ -1,0 +1,12 @@
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\UtilityTest.exe.config
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\UtilityTest.exe
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\UtilityTest.pdb
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\KBIC.Utility.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\BKIC.SellingPoint.DTO.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\bin\Debug\KBIC.Utility.pdb
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\obj\Debug\UtilityTest.csprojAssemblyReference.cache
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\obj\Debug\UtilityTest.csproj.CoreCompileInputs.cache
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\obj\Debug\UtilityTest.csproj.CopyComplete
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\obj\Debug\UtilityTest.exe
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\UtilityTest\obj\Debug\UtilityTest.pdb

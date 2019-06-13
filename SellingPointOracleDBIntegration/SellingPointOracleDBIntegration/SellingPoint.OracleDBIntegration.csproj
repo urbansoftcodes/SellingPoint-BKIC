@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8702516C-C67E-4E53-8E9E-3FA1D1B80A11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SellingPoint.OracleDBIntegration</RootNamespace>
+    <AssemblyName>SellingPoint.OracleDBIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBObjects\TransactionWrapper.cs" />
+    <Compile Include="Implementation\DomesticInsurance.cs" />
+    <Compile Include="Implementation\HomeEndorsement.cs" />
+    <Compile Include="Implementation\HomeInsurance.cs" />
+    <Compile Include="Implementation\InsuranceMaster.cs" />
+    <Compile Include="Implementation\MotorEndorsement.cs" />
+    <Compile Include="Implementation\MotorInsurance.cs" />
+    <Compile Include="Implementation\OracleToMSSQL\DomesticInsuranceIntegration.cs" />
+    <Compile Include="Implementation\OracleToMSSQL\HomeInsuranceIntegration.cs" />
+    <Compile Include="Implementation\OracleToMSSQL\InsuredMasterIntegration.cs" />
+    <Compile Include="Implementation\OracleToMSSQL\MotorInsuranceIntegration.cs" />
+    <Compile Include="Implementation\OracleToMSSQL\TravelInsuranceIntegration.cs" />
+    <Compile Include="Implementation\TravelEndorsement.cs" />
+    <Compile Include="Implementation\TravelInsurance.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellingPointSQL.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\DomesticInsurance.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\HomeEndorsement.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\HomeInsurance.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\InsuredMaster.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\MotorEndorsement.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\MotorInsurance.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\TravelEndorsement.cs" />
+    <Compile Include="StoredProcedure\MSSQLToOracle\TravelInsurance.cs" />
+    <Compile Include="StoredProcedure\OracleToMSSQL\DomesticTableIntegration.cs" />
+    <Compile Include="StoredProcedure\OracleToMSSQL\HomeTablesIntegration.cs" />
+    <Compile Include="StoredProcedure\OracleToMSSQL\MasterTablesIntegration.cs" />
+    <Compile Include="StoredProcedure\OracleToMSSQL\MotorTableIntegration.cs" />
+    <Compile Include="StoredProcedure\OracleToMSSQL\TravelTableIntegration.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

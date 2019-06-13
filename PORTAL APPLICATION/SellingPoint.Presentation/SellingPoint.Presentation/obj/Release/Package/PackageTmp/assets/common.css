@@ -1,0 +1,26 @@
+.aligncenter{
+	text-align:center;
+	margin-top:2%;
+}
+.inner-main-content .border-remove{
+	border:none;
+}
+.nav-tabs {
+	display:inline-block;
+}
+.top-space {
+    margin-top: 5%;
+}
+.tab-content .form-group {
+    display: inline-block;
+    width: 25%;
+}
+.form-horizontal .control-label {
+   text-align: left;
+}
+.aaaa
+{
+    
+  
+  margin-left:0px;
+}

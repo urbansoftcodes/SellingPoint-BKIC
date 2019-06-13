@@ -1,0 +1,14 @@
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.exe.config
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.exe
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.pdb
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.csprojAssemblyReference.cache
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.csproj.CoreCompileInputs.cache
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.exe
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.exe.config
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.exe
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\bin\Debug\SellingPoint.WindowsService.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.csprojAssemblyReference.cache
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.csproj.CoreCompileInputs.cache
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.exe
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.WindowsService\obj\Debug\SellingPoint.WindowsService.pdb

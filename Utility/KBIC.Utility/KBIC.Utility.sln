@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBIC.Utility", "KBIC.Utility\KBIC.Utility.csproj", "{1C088D60-E033-4D5D-9B7F-1E5FA9BDE701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityTest", "UtilityTest\UtilityTest.csproj", "{FCD282FB-ADA1-4B36-A78D-91FAC3DDBE93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C088D60-E033-4D5D-9B7F-1E5FA9BDE701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C088D60-E033-4D5D-9B7F-1E5FA9BDE701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C088D60-E033-4D5D-9B7F-1E5FA9BDE701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C088D60-E033-4D5D-9B7F-1E5FA9BDE701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD282FB-ADA1-4B36-A78D-91FAC3DDBE93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD282FB-ADA1-4B36-A78D-91FAC3DDBE93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD282FB-ADA1-4B36-A78D-91FAC3DDBE93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD282FB-ADA1-4B36-A78D-91FAC3DDBE93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

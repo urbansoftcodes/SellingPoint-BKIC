@@ -1,0 +1,9 @@
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\bin\Debug\KBIC.Utility.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\bin\Debug\KBIC.Utility.pdb
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\bin\Debug\BKIC.SellingPoint.DTO.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\obj\Debug\KBIC.Utility.csprojAssemblyReference.cache
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\obj\Debug\KBIC.Utility.csproj.CoreCompileInputs.cache
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\obj\Debug\KBIC.Utility.csproj.CopyComplete
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\obj\Debug\KBIC.Utility.dll
+E:\Projects\BKIC-SellingPoint\Utility\KBIC.Utility\KBIC.Utility\obj\Debug\KBIC.Utility.pdb

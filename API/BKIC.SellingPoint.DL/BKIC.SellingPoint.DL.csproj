@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BCA86EB-6175-40A5-AE67-B50402B0B8AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BKIC.SellingPoint.DL</RootNamespace>
+    <AssemblyName>BKIC.SellingPoint.DL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSMail.Utility">
+      <HintPath>..\..\..\..\DependentAssemblies\AWSMail.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\..\..\..\DependentAssemblies\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleEmail">
+      <HintPath>..\..\..\..\DependentAssemblies\AWSSDK.SimpleEmail.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\..\DependentAssemblies\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>Dependent\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>Dependent\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>Dependent\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>Dependent\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\..\..\..\DependentAssemblies\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SellingPoint.OracleDBIntegration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BKIC.SellingPoint.WebAPI\DependentAssemblies\SellingPoint.OracleDBIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependent\SendGridUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc">
+      <HintPath>Dependent\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>Dependent\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>Dependent\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\BKICSQL.cs" />
+    <Compile Include="BL\Implematon\Admin.cs" />
+    <Compile Include="BL\Implematon\MotorCalculator.cs" />
+    <Compile Include="BL\Implematon\HomeCalculator.cs" />
+    <Compile Include="BL\Implematon\HomeEndorsement.cs" />
+    <Compile Include="BL\Implematon\HtmlToPdf.cs" />
+    <Compile Include="BL\Implematon\DomesticHelp.cs" />
+    <Compile Include="BL\Implematon\DropDowns.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BL\Implematon\ExtensionMethods.cs" />
+    <Compile Include="BL\Implematon\HomeInsurance.cs" />
+    <Compile Include="BL\Implematon\InsurancePortal.cs" />
+    <Compile Include="BL\Implematon\Mail.cs" />
+    <Compile Include="BL\Implematon\MotorEndorsement.cs" />
+    <Compile Include="BL\Implematon\MotorInsurance.cs" />
+    <Compile Include="BL\Implematon\Payment.cs" />
+    <Compile Include="BL\Implematon\Report.cs" />
+    <Compile Include="BL\Implematon\Schedule.cs" />
+    <Compile Include="BL\Implematon\TravelEndorsement.cs" />
+    <Compile Include="BL\Implematon\TravelInsurance.cs" />
+    <Compile Include="BL\Implematon\User.cs" />
+    <Compile Include="BL\OracleDateFormat.cs" />
+    <Compile Include="BL\Repositories\IAdmin.cs" />
+    <Compile Include="BL\Repositories\IBKICDropDowns.cs" />
+    <Compile Include="BL\Repositories\IDomesticHelp.cs" />
+    <Compile Include="BL\Repositories\IDropDowns.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BL\Repositories\IHomeEndorsement.cs" />
+    <Compile Include="BL\Repositories\IHomeInsurance.cs" />
+    <Compile Include="BL\Repositories\IInsurancePortal.cs" />
+    <Compile Include="BL\Repositories\IMail.cs" />
+    <Compile Include="BL\Repositories\IMotorEndorsement.cs" />
+    <Compile Include="BL\Repositories\IMotorInsurance.cs" />
+    <Compile Include="BL\Repositories\IPayment.cs" />
+    <Compile Include="BL\Repositories\IReport.cs" />
+    <Compile Include="BL\Repositories\ISchedule.cs" />
+    <Compile Include="BL\Repositories\ITravelEndorsement.cs" />
+    <Compile Include="BL\Repositories\ITravelInsurance.cs" />
+    <Compile Include="BL\Repositories\IUser.cs" />
+    <Compile Include="BL\Utility.cs" />
+    <Compile Include="BO\Admin.cs" />
+    <Compile Include="BO\DomesticHelp.cs" />
+    <Compile Include="BO\DropDowns.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\HomeEndorsement.cs" />
+    <Compile Include="BO\HomeInsurance.cs" />
+    <Compile Include="BO\Mail.cs" />
+    <Compile Include="BO\MotorEndorsement.cs" />
+    <Compile Include="BO\MotorInsurance.cs" />
+    <Compile Include="BO\PageType.cs" />
+    <Compile Include="BO\Payment.cs" />
+    <Compile Include="BO\Portal.cs" />
+    <Compile Include="BO\Schedule.cs" />
+    <Compile Include="BO\TransactionWrapper.cs" />
+    <Compile Include="BO\TravelEndorsement.cs" />
+    <Compile Include="BO\TravelInsurance.cs" />
+    <Compile Include="BO\User.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\RegularExpression.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoredProcedures\Admin.cs" />
+    <Compile Include="StoredProcedures\BKICDropDowns.cs" />
+    <Compile Include="StoredProcedures\DomesticHelpInsurance.cs" />
+    <Compile Include="StoredProcedures\DropDowns.cs" />
+    <Compile Include="StoredProcedures\HomeEndorsement.cs" />
+    <Compile Include="StoredProcedures\HomeInsurance.cs" />
+    <Compile Include="StoredProcedures\Mail.cs" />
+    <Compile Include="StoredProcedures\MotorEndorsement.cs" />
+    <Compile Include="StoredProcedures\MotorInsurance.cs" />
+    <Compile Include="StoredProcedures\Payment.cs" />
+    <Compile Include="StoredProcedures\PortalSP.cs" />
+    <Compile Include="StoredProcedures\ReportSP.cs" />
+    <Compile Include="StoredProcedures\TravelEndorsement.cs" />
+    <Compile Include="StoredProcedures\TravelInsurance.cs" />
+    <Compile Include="StoredProcedures\Users.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BKIC.SellingPoint.DTO\BKIC.SellingPoint.DTO.csproj">
+      <Project>{0291C0BD-CE77-4032-999F-26214109EF1B}</Project>
+      <Name>BKIC.SellingPoint.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\BKIC.SellingPoint.DL.dll.config" />
+    <None Include="bin\Release\BKIC.SellingPoint.DL.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AWSMail.Utility.dll" />
+    <Content Include="bin\Debug\AWSSDK.Core.dll" />
+    <Content Include="bin\Debug\AWSSDK.SimpleEmail.dll" />
+    <Content Include="bin\Debug\BKIC.SellingPoint.DL.dll" />
+    <Content Include="bin\Debug\BKIC.SellingPoint.DL.pdb" />
+    <Content Include="bin\Debug\BKIC.SellingPoint.DTO.dll" />
+    <Content Include="bin\Debug\BKIC.SellingPoint.DTO.pdb" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\itextsharp.dll" />
+    <Content Include="bin\Debug\itextsharp.pdfa.dll" />
+    <Content Include="bin\Debug\itextsharp.xmlworker.dll" />
+    <Content Include="bin\Debug\Microsoft.mshtml.dll" />
+    <Content Include="bin\Debug\MimeKit.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\RestSharp.dll" />
+    <Content Include="bin\Debug\RestSharp.xml" />
+    <Content Include="bin\Debug\SellingPoint.OracleDBIntegration.dll" />
+    <Content Include="bin\Debug\SendGridUtility.dll" />
+    <Content Include="bin\Debug\Spire.Doc.dll" />
+    <Content Include="bin\Debug\Spire.License.dll" />
+    <Content Include="bin\Debug\Spire.Pdf.dll" />
+    <Content Include="bin\Release\AWSMail.Utility.dll" />
+    <Content Include="bin\Release\AWSSDK.Core.dll" />
+    <Content Include="bin\Release\AWSSDK.SimpleEmail.dll" />
+    <Content Include="bin\Release\BKIC.SellingPoint.DL.dll" />
+    <Content Include="bin\Release\BKIC.SellingPoint.DL.pdb" />
+    <Content Include="bin\Release\BKIC.SellingPoint.DTO.dll" />
+    <Content Include="bin\Release\BKIC.SellingPoint.DTO.pdb" />
+    <Content Include="bin\Release\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Release\itextsharp.dll" />
+    <Content Include="bin\Release\itextsharp.pdfa.dll" />
+    <Content Include="bin\Release\itextsharp.xmlworker.dll" />
+    <Content Include="bin\Release\Microsoft.mshtml.dll" />
+    <Content Include="bin\Release\MimeKit.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\Release\RestSharp.dll" />
+    <Content Include="bin\Release\RestSharp.xml" />
+    <Content Include="bin\Release\SellingPoint.OracleDBIntegration.dll" />
+    <Content Include="bin\Release\SendGridUtility.dll" />
+    <Content Include="bin\Release\Spire.Doc.dll" />
+    <Content Include="bin\Release\Spire.Doc.xml" />
+    <Content Include="bin\Release\Spire.License.dll" />
+    <Content Include="bin\Release\Spire.License.xml" />
+    <Content Include="bin\Release\Spire.Pdf.dll" />
+    <Content Include="bin\Release\Spire.Pdf.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

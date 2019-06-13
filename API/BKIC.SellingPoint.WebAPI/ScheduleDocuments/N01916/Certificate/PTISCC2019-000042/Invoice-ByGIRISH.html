@@ -1,0 +1,141 @@
+﻿<html>
+ <head>
+  <meta charset="UTF-8"/>
+</head> 
+<body style="color:#00000a;width: 100%;  margin: 0 auto; height:100%;overflow:hidden; letter-spacing:0.1px;overflow-y:auto;font-family: 'Times New Roman', Times, serif;">
+<div style="color:#00000a;width: 100%;">
+	<div style="color:#000000;display:block;text-align:center;">
+		<h4 style="padding:0;margin:0;font-size:16px;font-weight:bold">Insurance Certificate</h4>
+	</div>
+	<div style="display:block;margin-top:2px;padding:0px;width:100%;">
+		<table style="width:100%;color:#333333;border-collapse: collapse; font-size:13px;margin-top:5px;border: 1px solid #5e5e5e;">
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;">Insured:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:8px">{{InsuredName}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">المؤمن عليه</td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Make/Model:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{Make/Model}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">الطراز</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Policy No:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{PolicyNo}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">رقم الوثيقة</td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Reg. No:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{RegistrationNo}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">ﺭﻗﻢ ﺍﻟﺴﻴﺎﺭﺓ</td>
+			</tr>
+			<!-- row 3 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Type of Cover:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{PolicyCover}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">نوع التغطية</td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Chassis No:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{ChassisNo}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">ﺭﻗﻢ ﺍﻟﻘﺎﻋﺪﺓ</td>
+			</tr>
+			<!-- row 4 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Excess:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{Excess}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">مبلغ التحمل</td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Vehicle Value:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{VehicleValue}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">قيمة المركبة</td>
+			</tr>
+			<!-- row 5 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Additional Benefits:</td>
+				<td colspan="2" style="width:16.6667%;padding:2px 5px;font-size:10px">{{OptionalCover}}</td>
+				<!--<td style="width:16.6667%;text-align:right;padding:2px 5px;"></td>-->
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Issued Date:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{IssuedDate}}</td>
+				<td style="width:16.6667%;text-align:right;padding:2px 5px;"></td>
+			</tr>
+			<!-- row 6 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Insurance Period:</td>
+				<td style="width:26.6667%;padding:2px 5px;font-size:10px">{{InsurancePeriod}}</td>
+				<td style="width:6.6667%;padding:2px 5px;font-weight:bold;direction:rtl">ﻣﺪﺓ ﺍﻟﺘﺄﻣﻴﻦ</td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;font-weight:bold">Year of Make:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{Year}}</td>
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold;direction:rtl">الصنع</td>
+			</tr>
+			<!-- row 7 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:16.6667%;padding:2px 5px;font-weight:bold">Finance:</td>
+				<td style="width:16.6667%;padding:2px 5px;font-size:10px">{{Finance}}</td>
+				<td style="width:16.6667%;text-align:right;padding:2px 5px;"></td>
+				<td style="width:16.6667%;padding:2px 5px 2px 6px;border-left:1px solid #333333;"></td>
+				<td style="width:16.6667%;padding:2px 5px;"></td>
+				<td style="width:16.6667%;text-align:right;padding:2px 5px;"></td>
+			</tr>
+		</table>
+	</div>
+	<div style="display:block;margin-top:5px;padding:0px;width:100%;">
+		<table border="0" style="width:100%;color:#333333;border-collapse: collapse; font-size:13px;margin-top:2px;border: 0px solid #5e5e5e;">
+			<!-- row 1 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">We hereby certify that a policy of insurance covers the liabilities required to be covered as per the Legislative Decree No(3) of 1987.</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">و أحكام وثيقة التأمين الصادرة طبقا للمرسوم بقانون رقم ( ٣) لعام نحن نقر بأن هذه الشهادة تخضع لشروط١٩٨٧</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">Cumpolsary Additional Excess of BD 250/- will be charged in the following cases:</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">:ﻣﺒﻠﻎ ﺍﻟﺘﺤﻤﻞ ﺍﻹﻟﺰﺍﻣﻲ ﻟﻠﺤﻮﺍﺩﺙ ﺳﻴﻀﺎﻑ ﺇﻟﻰ ﻣﺒﻠﻎ ﺍﻟﺘﺤﻤﻞ ﺍﻟﻤﺬﻛﻮﺭ ﺃﻋﻼﻩ ﻣﺒﻠﻎ  ٢٥٠ﺩ ﻳﻨﺎﺭ ﻓﻲ ﺍﻟﺤﺎﻻﺕ ﺍﻟﺘﺎﻟﻴﺔ </td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">Vehicle driven by person under 25 years of age or person with less than 2 years driving experience.</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">ﺇﺫﺍ ﻛﺎﻥ ﺳﺎﺋﻖ ﺍﻟﻤﺮﻛﺒﺔ ﻳﺒﻠﻎ ﻣﻦ ﺍﻟﻌﻤﺮ ﺃﻗﻞ ﻣﻦ ٢٥ ﺳﻨﺔ ﺃﻭ ﺇﺫﺍ ﻛﺎﻥ ﻳﺤﻤﻞ ﺭﺧﺼﺔ ﻗﻴﺎﺩﺓ ﻟﻢ ﺗﻤﺾ ﻋﻠﻰ ﺻﺪﻭﺭﻫﺎ .ﻋﺎﻣﺎﻥ ﻛﺎﻣﻼﻥ</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">Loss or damage caused by malicious act of unknown third parties.</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">.ﺍﻟﺨﺴﺎﺭﺓ ﺃﻭ ﺍﻟﻀﺮﺭ ﺍﻟﻨﺎﺗﺞ ﻋﻦ ﻓﻌﻞ ﻣﺘﻌﻤﺪ ﻣﻦ ﻗﺒﻞ ﺷﺨﺺ / ﺃﺷﺨﺎﺹ ﻣﺠﻬﻮﻟﻲ ﺍﻟﻬﻮﻳﺔ</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">General Instructions:<br/>In the event of an accident you should, immediatly inform the company providing the full claim details</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">:ﺗﻌﻠﻴﻤﺎﺕ ﻋﺎﻣﺔ<br/>.ﻓﻲ ﺣﺎﻟﺔ ﻭﻗﻮﻉ ﺃﻱ ﺣﺎﺩﺙ ﻳﺠﺐ ﻋﻠﻴﻚ ﺇﺑﻼﻍ ﺍﻟﺸﺮﻛﺔ ﻓﻮﺭﺍ، ﻣﺒﻴﻨﺎ ﺗﻔﺎﺻﻴﻞ ﺍﻟﺤﺎﺩﺙ</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px 2px 0px;">In the event of change of ownership of the vehicle, this insurance is not transferable to the buyer automatically, Please contact the company immediately for the transfer of Insurance</td>
+				<td style="width:50%;padding:2px 0px 2px 5px;direction:rtl">ﻓﻲ ﺣﺎﻟﺔ ﺗﻐﻴﻴﺮ ﻣﻠﻜﻴﺔ ﺍﻟﺴﻴﺎﺭﺓ ﻓﺈﻥ ﺍﻟﺘﺄﻣﻴﻦ ﻻ ﻳﻨﺘﻘﻞ ﺇﻟﻰ ﺍﻟﻤﺸﺘﺮﻱ ﺗﻠﻘﺎﺋﻴﺎ، ﻳﺮﺟﻰ ﺇﺭﺟﺎﻉ ﺷﻬﺎﺩﺓ ﺍﻟﺘﺄﻣﻴﻦ ﺇﻟﻰ ﺍﻟﺸﺮﻛﺔ .ﻭ ﺍﻟﺤﺼﻮﻝ ﻋﻠﻰ ﺗﺄﻣﻴﻦ ﺟﺪﻳﺪ ﻓﻲ ﺍﻟﺤﺎﻝ</td>
+			</tr>
+		</table>
+		
+		<table style="width:100%;color:#333333;border-collapse: collapse; font-size:13px;margin-top: 8px;border: 1px solid #5e5e5e;">
+			<!-- row 1 -->
+			<tr style="width:100%;font-size:11px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px;">for road assist, please call our helpline 80001218</td>
+				<td style="width:50%;padding:2px 5px;direction:rtl">٨٠٠٠١٢١٨ ﻟﻄﻠﺐ ﺍﻟﻤﺴﺎﻋﺪﺓ ﻋﻠﻰ ﺍﻟﻄﺮﻳﻖ ﺍﻟﺮﺟﺎﺀ ﺍﻻﺗﺼﺎﻝ ﻋﻠﻰ ﺍﻟﺮﻗﻢ</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:10px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px;">Head Office - 17119999, Claims Dept. - 17875000</td>
+				<td style="width:50%;padding:2px 5px;direction:rtl">١٧٨٧٥٠٠٠ ﺍﻟﻤﺮﻛﺰ ﺍﻟﺮﺫﻳﺴﻲ ١٧١١٩٩٩٩ , ﻗﺴﻢ ﺍﻟﻤﻄﺎﻟﺒﺎﺕ</td>
+			</tr>
+		</table>
+		<table border="0" style="width:100%;color:#333333;border-collapse: collapse; font-size:13px;margin-top: 8px;border: 0px solid #5e5e5e;">
+			<!-- row 1 -->
+			<tr style="width:100%;font-size:13px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px;">Signed for and on behalf of</td>
+				<td style="width:50%;padding:2px 5px;direction:rtl">ﻭﻗﻊ ﺑﺎﻟﻨﻴﺎﺑﺔ ﻋﻦ</td>
+			</tr>
+			<!-- row 2 -->
+			<tr style="width:100%;font-size:15px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px;font-weight:bold">BAHRAIN KUWAIT INSURANCE</td>
+				<td style="width:50%;padding:2px 5px;font-weight:bold;direction:rtl">ﺍﻟﺒﺤﺮﻳﻨﻴﺔ ﺍﻟﻜﻮﻳﺘﻴﺔ ﻟﻠﺘﺄﻣﻴﻦ</td>
+			</tr>
+			<!-- row 3 -->
+			<tr style="width:100%;font-size:11px;line-height:1.2;">
+				<td style="width:50%;padding:2px 5px;">Licensed by the Central Bank of Bahrain as a General Insurance Company</td>
+				<td style="width:50%;text-align:right;padding:2px 5px;">Licensed by the Central Bank of Bahrain as a General Insurance Company</td>
+			</tr>
+		</table>
+	</div>	
+</div>
+</body></html>

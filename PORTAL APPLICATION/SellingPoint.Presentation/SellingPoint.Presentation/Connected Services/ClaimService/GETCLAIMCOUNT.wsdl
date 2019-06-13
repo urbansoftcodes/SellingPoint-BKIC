@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMCOUNT" name="GETCLAIMCOUNT" targetNamespace="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMCOUNT" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMCOUNT">
+      <xsd:element name="GETCLAIMCOUNTInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OCLAIMCOUNT-NUMBER-OUT">
+              <xsd:complexType />
+            </xsd:element>
+            <xsd:element name="PPOLICYNO-VARCHAR2-IN" type="xsd:string" />
+            <xsd:element name="PRENEWALCOUNT-NUMBER-IN" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GETCLAIMCOUNTOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OCLAIMCOUNT" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="GETCLAIMCOUNTInputMessage">
+    <part name="parameters" element="tns:GETCLAIMCOUNTInput" />
+  </message>
+  <message name="GETCLAIMCOUNTOutputMessage">
+    <part name="parameters" element="tns:GETCLAIMCOUNTOutput" />
+  </message>
+  <portType name="GETCLAIMCOUNTPortType">
+    <operation name="GETCLAIMCOUNT">
+      <input message="tns:GETCLAIMCOUNTInputMessage" />
+      <output message="tns:GETCLAIMCOUNTOutputMessage" />
+    </operation>
+  </portType>
+  <binding name="GETCLAIMCOUNTBinding" type="tns:GETCLAIMCOUNTPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GETCLAIMCOUNT">
+      <soap:operation soapAction="GETCLAIMCOUNT" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GETCLAIMCOUNTService">
+    <documentation>Oracle Web Service</documentation>
+    <port name="GETCLAIMCOUNTPort" binding="tns:GETCLAIMCOUNTBinding">
+      <soap:address location="http://webapi.bkic.com:8080/orawsv/WEBSERVICEUSER/GETCLAIMCOUNT" />
+    </port>
+  </service>
+</definitions>

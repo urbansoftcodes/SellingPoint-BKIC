@@ -1,0 +1,8 @@
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\bin\Debug\BKIC.SellingPoint.DTO.dll
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\bin\Debug\BKIC.SellingPoint.DTO.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\obj\Debug\BKIC.SellingPoint.DTO.csproj.CoreCompileInputs.cache
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\obj\Debug\BKIC.SellingPoint.DTO.csproj.CopyComplete
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\obj\Debug\BKIC.SellingPoint.DTO.dll
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\obj\Debug\BKIC.SellingPoint.DTO.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\API\BKIC.SellingPoint.DTO\obj\Debug\BKIC.SellingPoint.DTO.csprojAssemblyReference.cache

@@ -1,0 +1,56 @@
+﻿<TABLE WIDTH=638 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=144></COL>
+	<COL WIDTH=146></COL>
+	<COL WIDTH=145></COL>
+	<COL WIDTH=146></COL>
+	<TR>
+		<TD COLSPAN=4 WIDTH=622 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P STYLE="text-align:center;"><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt"><B>Insured
+			Details – {{WorkerCount}}</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">Name:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{Name}}</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">Sex:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{SEX}}</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">Date of
+			Birth:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{DOB}}</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">Nationality:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{Nationality}}</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>		
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">CPR/Passport
+			Number:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{Passport}}</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">Occupation:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=146 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P><FONT FACE="serif"><FONT SIZE=3 STYLE="font-size: 11pt">{{Occupation}}</FONT></FONT></P>
+		</TD>
+	</TR>	
+</TABLE>

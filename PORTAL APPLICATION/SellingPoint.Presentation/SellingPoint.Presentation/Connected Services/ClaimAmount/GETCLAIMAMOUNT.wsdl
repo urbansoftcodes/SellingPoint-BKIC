@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMAMOUNT" name="GETCLAIMAMOUNT" targetNamespace="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMAMOUNT" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/orawsv/WEBSERVICEUSER/GETCLAIMAMOUNT">
+      <xsd:element name="GETCLAIMAMOUNTInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OCLAIMAMOUNT-NUMBER-OUT">
+              <xsd:complexType />
+            </xsd:element>
+            <xsd:element name="PPOLICYNO-VARCHAR2-IN" type="xsd:string" />
+            <xsd:element name="PRENEWALCOUNT-NUMBER-IN" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GETCLAIMAMOUNTOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OCLAIMAMOUNT" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="GETCLAIMAMOUNTInputMessage">
+    <part name="parameters" element="tns:GETCLAIMAMOUNTInput" />
+  </message>
+  <message name="GETCLAIMAMOUNTOutputMessage">
+    <part name="parameters" element="tns:GETCLAIMAMOUNTOutput" />
+  </message>
+  <portType name="GETCLAIMAMOUNTPortType">
+    <operation name="GETCLAIMAMOUNT">
+      <input message="tns:GETCLAIMAMOUNTInputMessage" />
+      <output message="tns:GETCLAIMAMOUNTOutputMessage" />
+    </operation>
+  </portType>
+  <binding name="GETCLAIMAMOUNTBinding" type="tns:GETCLAIMAMOUNTPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GETCLAIMAMOUNT">
+      <soap:operation soapAction="GETCLAIMAMOUNT" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="parameters" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GETCLAIMAMOUNTService">
+    <documentation>Oracle Web Service</documentation>
+    <port name="GETCLAIMAMOUNTPort" binding="tns:GETCLAIMAMOUNTBinding">
+      <soap:address location="http://webapi.bkic.com:8080/orawsv/WEBSERVICEUSER/GETCLAIMAMOUNT" />
+    </port>
+  </service>
+</definitions>

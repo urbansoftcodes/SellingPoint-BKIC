@@ -1,0 +1,14 @@
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.exe.config
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.exe
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.pdb
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.csprojAssemblyReference.cache
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.csproj.CoreCompileInputs.cache
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.exe
+E:\Projects\BKIC-SellingPoint\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.exe.config
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.exe
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\bin\Debug\SellingPoint.TaskScheduler.pdb
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.csprojAssemblyReference.cache
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.csproj.CoreCompileInputs.cache
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.exe
+E:\Projects\WORKING\BKIC-SellingPoint\Selling-Point\SellingPointOracleDBIntegration\SellingPoint.TaskScheduler\obj\Debug\SellingPoint.TaskScheduler.pdb

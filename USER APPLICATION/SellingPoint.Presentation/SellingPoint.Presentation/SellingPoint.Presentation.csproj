@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F03FB5E0-462E-4E83-AF2B-E2170EBE0827}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SellingPoint.Presentation</RootNamespace>
+    <AssemblyName>SellingPoint.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BKIC.SellingPoint.DL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DependentAssemblies\BKIC.SellingPoint.DL.dll</HintPath>
+    </Reference>
+    <Reference Include="BKIC.SellingPoint.DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DependentAssemblies\BKIC.SellingPoint.DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownListChosen, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropDownListChosen.1.0.2\lib\DropDownListChosen.dll</HintPath>
+    </Reference>
+    <Reference Include="KBIC.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DependentAssemblies\KBIC.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DependentAssemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgentMaster.aspx" />
+    <Content Include="assets\css\bootstrap-select.min.css" />
+    <Content Include="assets\css\circles.css" />
+    <Content Include="assets\css\export.css" />
+    <Content Include="assets\css\flipclock.css" />
+    <Content Include="assets\css\jQuery-plugin-progressbar1.css" />
+    <Content Include="assets\css\loading.css" />
+    <Content Include="assets\css\monthly.css" />
+    <Content Include="assets\customjs\ace-extra.min.js" />
+    <Content Include="assets\customjs\ace.min.js" />
+    <Content Include="assets\customjs\amcharts.js" />
+    <Content Include="assets\customjs\bars.js" />
+    <Content Include="assets\customjs\bootstrap-3.1.1.min.js" />
+    <Content Include="assets\customjs\Chart.min.js" />
+    <Content Include="assets\customjs\circles.js" />
+    <Content Include="assets\customjs\classie.js" />
+    <Content Include="assets\customjs\fastclick.js" />
+    <Content Include="assets\customjs\gauge.js" />
+    <Content Include="assets\customjs\gnmenu.js" />
+    <Content Include="assets\customjs\icheck.min.js" />
+    <Content Include="assets\customjs\jquery-ui.min.js" />
+    <Content Include="assets\customjs\jquery.datetimepicker.min.js" />
+    <Content Include="assets\customjs\jquery.nicescroll.js" />
+    <Content Include="assets\customjs\jquery.validate.min.js" />
+    <Content Include="assets\customjs\light.js" />
+    <Content Include="assets\customjs\MasterPage\chosen.jquery.min.js" />
+    <Content Include="assets\customjs\MasterPage\fetchPolicies.js" />
+    <Content Include="assets\customjs\MasterPage\jquery.scrollintoview.min.js" />
+    <None Include="Connected Services\ClaimAmount\configuration91.svcinfo" />
+    <None Include="Connected Services\ClaimAmount\configuration.svcinfo" />
+    <None Include="Connected Services\ClaimAmount\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="HomeInternalEndorsement.aspx" />
+    <Content Include="MotorInternalEndorsement.aspx" />
+    <Content Include="assets\customjs\modernizr.custom.js" />
+    <Content Include="assets\customjs\nprogress.js" />
+    <Content Include="assets\customjs\Refocus.js" />
+    <Content Include="assets\customjs\screenfull.js" />
+    <Content Include="assets\customjs\serial.js" />
+    <Content Include="assets\customjs\skycons.js" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\images\BBKLogo.jpg" />
+    <Content Include="assets\images\domestic-icon.png" />
+    <Content Include="assets\images\home-icon.png" />
+    <Content Include="assets\images\loading.png" />
+    <Content Include="assets\images\motor-icon.png" />
+    <Content Include="assets\images\SecuraLogo.jpg" />
+    <Content Include="assets\images\TiscoLogo.jpg" />
+    <Content Include="assets\images\travel-icon.png" />
+    <Content Include="assets\images\user-icon.png" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\BKIC.SellingPoint.DL.dll" />
+    <Content Include="bin\BKIC.SellingPoint.DTO.dll" />
+    <Content Include="bin\DropDownListChosen.dll" />
+    <Content Include="bin\KBIC.Utility.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\SellingPoint.Presentation.dll" />
+    <Content Include="bin\SellingPoint.Presentation.pdb" />
+    <Content Include="BranchMaster.aspx" />
+    <Content Include="CategoryMaster.aspx" />
+    <None Include="Connected Services\ClaimAmount\GETCLAIMAMOUNT.wsdl" />
+    <Content Include="Connected Services\ClaimAmount\SellingPoint.Presentation.ClaimAmount.GETCLAIMAMOUNTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ClaimService\configuration91.svcinfo" />
+    <None Include="Connected Services\ClaimService\configuration.svcinfo" />
+    <None Include="Connected Services\ClaimService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="DependentAssemblies\AjaxControlToolkit.dll" />
+    <Content Include="DependentAssemblies\BKIC.SellingPoint.DL.dll" />
+    <Content Include="DependentAssemblies\BKIC.SellingPoint.DTO.dll" />
+    <Content Include="DependentAssemblies\KBIC.Utility.dll" />
+    <Content Include="DependentAssemblies\Newtonsoft.Json.dll" />
+    <Content Include="DomesticHelp.aspx" />
+    <Content Include="DomesticHelpActivePolicy.aspx" />
+    <Content Include="DomesticHIRSearch.aspx" />
+    <Content Include="General.Master" />
+    <Content Include="DependentAssemblies\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="DependentAssemblies\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\SellingPoint.Presentation.dll.config" />
+    <None Include="Connected Services\ClaimService\GETCLAIMCOUNT.wsdl" />
+    <Content Include="Connected Services\ClaimService\SellingPoint.Presentation.ClaimService.GETCLAIMCOUNTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\common.css" />
+    <Content Include="assets\css\ace-ie.min.css" />
+    <Content Include="assets\css\ace-part2.min.css" />
+    <Content Include="assets\css\ace-rtl.min.css" />
+    <Content Include="assets\css\ace-skins.min.css" />
+    <Content Include="assets\css\ace-test.css" />
+    <Content Include="assets\css\ace.min.css" />
+    <Content Include="assets\css\acetest.css" />
+    <Content Include="assets\css\aero%402x.png" />
+    <Content Include="assets\css\aero.png" />
+    <Content Include="assets\css\basictable.css" />
+    <Content Include="assets\css\bootstrap-colorpicker.min.css" />
+    <Content Include="assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\bootstrap-duallistbox.min.css" />
+    <Content Include="assets\css\bootstrap-editable.min.css" />
+    <Content Include="assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="assets\css\bootstrap-timepicker.css" />
+    <Content Include="assets\css\bootstrap-timepicker.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\chart.css" />
+    <Content Include="assets\css\chosen.css" />
+    <Content Include="assets\css\chosen.min.css" />
+    <Content Include="assets\css\colorbox.min.css" />
+    <Content Include="assets\css\component.css" />
+    <Content Include="assets\css\custom.min.css" />
+    <Content Include="assets\css\CustomGridView.css" />
+    <Content Include="assets\css\customn.css" />
+    <Content Include="assets\css\daterangepicker.min.css" />
+    <Content Include="assets\css\dropzone.min.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\fonts.googleapis.com.css" />
+    <Content Include="assets\css\fullcalendar.min.css" />
+    <Content Include="assets\css\green.css" />
+    <Content Include="assets\css\jquery-ui.custom.min.css" />
+    <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\jquery.gritter.min.css" />
+    <Content Include="assets\css\main-style.css" />
+    <Content Include="assets\css\prettify.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\style_grid.css" />
+    <Content Include="assets\css\table-style.css" />
+    <Content Include="assets\css\ui.jqgrid.min.css" />
+    <Content Include="assets\customjs\chosen.jquery.js" />
+    <Content Include="assets\customjs\custom.min.js" />
+    <Content Include="assets\customjs\export.js" />
+    <Content Include="assets\customjs\flipclock.js" />
+    <Content Include="assets\customjs\jquery-2.1.4.min.js" />
+    <Content Include="assets\customjs\MasterPage\chosen.min.css" />
+    <Content Include="assets\customjs\MasterPage\generalMasterPage.js" />
+    <Content Include="assets\customjs\scripts.js" />
+    <Content Include="assets\customjs\validator.min.js" />
+    <Content Include="assets\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\admin.jpg" />
+    <Content Include="assets\images\avatars\avatar.png" />
+    <Content Include="assets\images\avatars\avatar1.png" />
+    <Content Include="assets\images\avatars\avatar2.png" />
+    <Content Include="assets\images\avatars\avatar3.png" />
+    <Content Include="assets\images\avatars\avatar4.png" />
+    <Content Include="assets\images\avatars\avatar5.png" />
+    <Content Include="assets\images\avatars\profile-pic.jpg" />
+    <Content Include="assets\images\avatars\user.jpg" />
+    <Content Include="assets\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="assets\images\email\email1.png" />
+    <Content Include="assets\images\email\email2.png" />
+    <Content Include="assets\images\email\email3.png" />
+    <Content Include="assets\images\email\email4.png" />
+    <Content Include="assets\images\gallery\image-1.jpg" />
+    <Content Include="assets\images\gallery\image-2.jpg" />
+    <Content Include="assets\images\gallery\image-3.jpg" />
+    <Content Include="assets\images\gallery\image-4.jpg" />
+    <Content Include="assets\images\gallery\image-5.jpg" />
+    <Content Include="assets\images\gallery\image-6.jpg" />
+    <Content Include="assets\images\gallery\thumb-1.jpg" />
+    <Content Include="assets\images\gallery\thumb-2.jpg" />
+    <Content Include="assets\images\gallery\thumb-3.jpg" />
+    <Content Include="assets\images\gallery\thumb-4.jpg" />
+    <Content Include="assets\images\gallery\thumb-5.jpg" />
+    <Content Include="assets\images\gallery\thumb-6.jpg" />
+    <Content Include="assets\images\Logo.png" />
+    <Content Include="assets\images\photos\user1.png" />
+    <Content Include="assets\images\photos\user2.png" />
+    <Content Include="assets\images\photos\user3.png" />
+    <Content Include="assets\images\photos\user4.png" />
+    <Content Include="assets\images\photos\user5.png" />
+    <Content Include="assets\images\placeholder\165x90.png" />
+    <Content Include="assets\images\placeholder\255x150.png" />
+    <Content Include="assets\images\placeholder\530x270.png" />
+    <Content Include="assets\images\placeholder\550x280.png" />
+    <Content Include="assets\swf\flashExport.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="HomeAddRemoveBankEndorsement.aspx" />
+    <Content Include="HomeAddRemoveDomesticHelpEndorsement.aspx" />
+    <Content Include="HomeBranchReport.aspx" />
+    <Content Include="HomeCancelEndorsement.aspx" />
+    <Content Include="HomeChangeSumInsuredEndorsement.aspx" />
+    <Content Include="HomeCorrectAddressEndorsement.aspx" />
+    <Content Include="HomeHIR.aspx" />
+    <Content Include="HomeInsuranceActivePolicy.aspx" />
+    <Content Include="HomeHIRSearch.aspx" />
+    <Content Include="HomeInsurancePage.aspx" />
+    <Content Include="HomeMainReport.aspx" />
+    <Content Include="HomeOracleRenewal.aspx" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="HomeSystemRenewal.aspx" />
+    <Content Include="HomeUserReport.aspx" />
+    <Content Include="InsuredMaster.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MotorAddCoverEndorsement.aspx" />
+    <Content Include="MotorAddRemoveBankEndorsement.aspx" />
+    <Content Include="MotorAgeReport.aspx" />
+    <Content Include="MotorBranchReport.aspx" />
+    <Content Include="MotorCancelEndorsement.aspx" />
+    <Content Include="MotorChangeExcessEndorsement.aspx" />
+    <Content Include="MotorChangePremiumEndorsement.aspx" />
+    <Content Include="MotorChangeRegistrationEndorsement.aspx" />
+    <Content Include="MotorChangeSumInsuredEndorsement.aspx" />
+    <Content Include="MotorCorrectionendorsement.aspx" />
+    <Content Include="MotorCoverMaster.aspx" />
+    <Content Include="MotorEngineCC.aspx" />
+    <Content Include="MotorExtentEndorsement.aspx" />
+    <Content Include="MotorInsurance.aspx" />
+    <Content Include="MotorHIRSearch.aspx" />
+    <Content Include="MotorInsurancePolicy.aspx" />
+    <Content Include="MotorMainReport.aspx" />
+    <Content Include="MotorMakeYear.aspx" />
+    <Content Include="MotorProductCover.aspx" />
+    <Content Include="MotorProductMaster.aspx" />
+    <Content Include="MotorOracleRenewal.aspx" />
+    <Content Include="MotorHIR.aspx" />
+    <Content Include="MotorSystemPolicyRenewal.aspx" />
+    <Content Include="MotorTransferEndorsement.aspx" />
+    <Content Include="MotorUserReport.aspx" />
+    <Content Include="MotorVehicleMaster.aspx" />
+    <Content Include="PageLoader.ascx" />
+    <Content Include="QuotePage.aspx" />
+    <Content Include="TravelAddRemoveMemberEndorsement.aspx" />
+    <Content Include="TravelBranchReport.aspx" />
+    <Content Include="TravelCancelEndorsement.aspx" />
+    <Content Include="TravelChangeMemberEndorsement.aspx" />
+    <Content Include="TravelChangePremiumEndorsement.aspx" />
+    <Content Include="TravelInsuranceActivePolicy.aspx" />
+    <Content Include="TravelHIRSearch.aspx" />
+    <Content Include="TravelMainReport.aspx" />
+    <Content Include="Travelnsurance.aspx" />
+    <Content Include="TravelUserReport.aspx" />
+    <Content Include="UnAuthorizedPageAccess.aspx" />
+    <Content Include="UserMaster.aspx" />
+    <Content Include="ViewHIRDocuments.aspx" />
+    <Content Include="ViewInsuranceMessage.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentMaster.aspx.cs">
+      <DependentUpon>AgentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgentMaster.aspx.designer.cs">
+      <DependentUpon>AgentMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ClaimAmount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="HomeInternalEndorsement.aspx.cs">
+      <DependentUpon>HomeInternalEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeInternalEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeInternalEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorInternalEndorsement.aspx.cs">
+      <DependentUpon>MotorInternalEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorInternalEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorInternalEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchMaster.aspx.cs">
+      <DependentUpon>BranchMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchMaster.aspx.designer.cs">
+      <DependentUpon>BranchMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryMaster.aspx.cs">
+      <DependentUpon>CategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryMaster.aspx.designer.cs">
+      <DependentUpon>CategoryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientUtility.cs" />
+    <Compile Include="Connected Services\ClaimService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DomesticHelp.aspx.cs">
+      <DependentUpon>DomesticHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DomesticHelp.aspx.designer.cs">
+      <DependentUpon>DomesticHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DomesticHelpActivePolicy.aspx.cs">
+      <DependentUpon>DomesticHelpActivePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DomesticHelpActivePolicy.aspx.designer.cs">
+      <DependentUpon>DomesticHelpActivePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DomesticHIRSearch.aspx.cs">
+      <DependentUpon>DomesticHIRSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DomesticHIRSearch.aspx.designer.cs">
+      <DependentUpon>DomesticHIRSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="General.Master.cs">
+      <DependentUpon>General.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="General.Master.designer.cs">
+      <DependentUpon>General.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAddRemoveBankEndorsement.aspx.cs">
+      <DependentUpon>HomeAddRemoveBankEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeAddRemoveBankEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeAddRemoveBankEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAddRemoveDomesticHelpEndorsement.aspx.cs">
+      <DependentUpon>HomeAddRemoveDomesticHelpEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeAddRemoveDomesticHelpEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeAddRemoveDomesticHelpEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeBranchReport.aspx.cs">
+      <DependentUpon>HomeBranchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeBranchReport.aspx.designer.cs">
+      <DependentUpon>HomeBranchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeCancelEndorsement.aspx.cs">
+      <DependentUpon>HomeCancelEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeCancelEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeCancelEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeChangeSumInsuredEndorsement.aspx.cs">
+      <DependentUpon>HomeChangeSumInsuredEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeChangeSumInsuredEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeChangeSumInsuredEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeCorrectAddressEndorsement.aspx.cs">
+      <DependentUpon>HomeCorrectAddressEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeCorrectAddressEndorsement.aspx.designer.cs">
+      <DependentUpon>HomeCorrectAddressEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeHIR.aspx.cs">
+      <DependentUpon>HomeHIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeHIR.aspx.designer.cs">
+      <DependentUpon>HomeHIR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeInsuranceActivePolicy.aspx.cs">
+      <DependentUpon>HomeInsuranceActivePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeInsuranceActivePolicy.aspx.designer.cs">
+      <DependentUpon>HomeInsuranceActivePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeHIRSearch.aspx.cs">
+      <DependentUpon>HomeHIRSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeHIRSearch.aspx.designer.cs">
+      <DependentUpon>HomeHIRSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeInsurancePage.aspx.cs">
+      <DependentUpon>HomeInsurancePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeInsurancePage.aspx.designer.cs">
+      <DependentUpon>HomeInsurancePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeMainReport.aspx.cs">
+      <DependentUpon>HomeMainReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeMainReport.aspx.designer.cs">
+      <DependentUpon>HomeMainReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeOracleRenewal.aspx.cs">
+      <DependentUpon>HomeOracleRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeOracleRenewal.aspx.designer.cs">
+      <DependentUpon>HomeOracleRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSystemRenewal.aspx.cs">
+      <DependentUpon>HomeSystemRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeSystemRenewal.aspx.designer.cs">
+      <DependentUpon>HomeSystemRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUserReport.aspx.cs">
+      <DependentUpon>HomeUserReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeUserReport.aspx.designer.cs">
+      <DependentUpon>HomeUserReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsuredMaster.aspx.cs">
+      <DependentUpon>InsuredMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsuredMaster.aspx.designer.cs">
+      <DependentUpon>InsuredMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorAddCoverEndorsement.aspx.cs">
+      <DependentUpon>MotorAddCoverEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorAddCoverEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorAddCoverEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorAddRemoveBankEndorsement.aspx.cs">
+      <DependentUpon>MotorAddRemoveBankEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorAddRemoveBankEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorAddRemoveBankEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorAgeReport.aspx.cs">
+      <DependentUpon>MotorAgeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorAgeReport.aspx.designer.cs">
+      <DependentUpon>MotorAgeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorBranchReport.aspx.cs">
+      <DependentUpon>MotorBranchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorBranchReport.aspx.designer.cs">
+      <DependentUpon>MotorBranchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorCancelEndorsement.aspx.cs">
+      <DependentUpon>MotorCancelEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorCancelEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorCancelEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorChangeExcessEndorsement.aspx.cs">
+      <DependentUpon>MotorChangeExcessEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorChangeExcessEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorChangeExcessEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorChangePremiumEndorsement.aspx.cs">
+      <DependentUpon>MotorChangePremiumEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorChangePremiumEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorChangePremiumEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorChangeRegistrationEndorsement.aspx.cs">
+      <DependentUpon>MotorChangeRegistrationEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorChangeRegistrationEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorChangeRegistrationEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorChangeSumInsuredEndorsement.aspx.cs">
+      <DependentUpon>MotorChangeSumInsuredEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorChangeSumInsuredEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorChangeSumInsuredEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorCorrectionEndorsement.aspx.cs">
+      <DependentUpon>MotorCorrectionendorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorCorrectionEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorCorrectionendorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorCoverMaster.aspx.cs">
+      <DependentUpon>MotorCoverMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorCoverMaster.aspx.designer.cs">
+      <DependentUpon>MotorCoverMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorEngineCC.aspx.cs">
+      <DependentUpon>MotorEngineCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorEngineCC.aspx.designer.cs">
+      <DependentUpon>MotorEngineCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorExtentEndorsement.aspx.cs">
+      <DependentUpon>MotorExtentEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorExtentEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorExtentEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorInsurance.aspx.cs">
+      <DependentUpon>MotorInsurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorInsurance.aspx.designer.cs">
+      <DependentUpon>MotorInsurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorHIRSearch.aspx.cs">
+      <DependentUpon>MotorHIRSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorHIRSearch.aspx.designer.cs">
+      <DependentUpon>MotorHIRSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorInsurancePolicy.aspx.cs">
+      <DependentUpon>MotorInsurancePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorInsurancePolicy.aspx.designer.cs">
+      <DependentUpon>MotorInsurancePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorMainReport.aspx.cs">
+      <DependentUpon>MotorMainReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorMainReport.aspx.designer.cs">
+      <DependentUpon>MotorMainReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorMakeYear.aspx.cs">
+      <DependentUpon>MotorMakeYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorMakeYear.aspx.designer.cs">
+      <DependentUpon>MotorMakeYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorProductCover.aspx.cs">
+      <DependentUpon>MotorProductCover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorProductCover.aspx.designer.cs">
+      <DependentUpon>MotorProductCover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorProductMaster.aspx.cs">
+      <DependentUpon>MotorProductMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorProductMaster.aspx.designer.cs">
+      <DependentUpon>MotorProductMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorOracleRenewal.aspx.cs">
+      <DependentUpon>MotorOracleRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorOracleRenewal.aspx.designer.cs">
+      <DependentUpon>MotorOracleRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorHIR.aspx.cs">
+      <DependentUpon>MotorHIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorHIR.aspx.designer.cs">
+      <DependentUpon>MotorHIR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorSystemPolicyRenewal.aspx.cs">
+      <DependentUpon>MotorSystemPolicyRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorSystemPolicyRenewal.aspx.designer.cs">
+      <DependentUpon>MotorSystemPolicyRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorTransferEndorsement.aspx.cs">
+      <DependentUpon>MotorTransferEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorTransferEndorsement.aspx.designer.cs">
+      <DependentUpon>MotorTransferEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorUserReport.aspx.cs">
+      <DependentUpon>MotorUserReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorUserReport.aspx.designer.cs">
+      <DependentUpon>MotorUserReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MotorVehicleMaster.aspx.cs">
+      <DependentUpon>MotorVehicleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MotorVehicleMaster.aspx.designer.cs">
+      <DependentUpon>MotorVehicleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PageLoader.ascx.cs">
+      <DependentUpon>PageLoader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLoader.ascx.designer.cs">
+      <DependentUpon>PageLoader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotePage.aspx.cs">
+      <DependentUpon>QuotePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotePage.aspx.designer.cs">
+      <DependentUpon>QuotePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelAddRemoveMemberEndorsement.aspx.cs">
+      <DependentUpon>TravelAddRemoveMemberEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelAddRemoveMemberEndorsement.aspx.designer.cs">
+      <DependentUpon>TravelAddRemoveMemberEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelBranchReport.aspx.cs">
+      <DependentUpon>TravelBranchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelBranchReport.aspx.designer.cs">
+      <DependentUpon>TravelBranchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelCancelEndorsement.aspx.cs">
+      <DependentUpon>TravelCancelEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelCancelEndorsement.aspx.designer.cs">
+      <DependentUpon>TravelCancelEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelChangeMemberEndorsement.aspx.cs">
+      <DependentUpon>TravelChangeMemberEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelChangeMemberEndorsement.aspx.designer.cs">
+      <DependentUpon>TravelChangeMemberEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelChangePremiumEndorsement.aspx.cs">
+      <DependentUpon>TravelChangePremiumEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelChangePremiumEndorsement.aspx.designer.cs">
+      <DependentUpon>TravelChangePremiumEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelInsuranceActivePolicy.aspx.cs">
+      <DependentUpon>TravelInsuranceActivePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelInsuranceActivePolicy.aspx.designer.cs">
+      <DependentUpon>TravelInsuranceActivePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelHIRSearch.aspx.cs">
+      <DependentUpon>TravelHIRSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelHIRSearch.aspx.designer.cs">
+      <DependentUpon>TravelHIRSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelMainReport.aspx.cs">
+      <DependentUpon>TravelMainReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelMainReport.aspx.designer.cs">
+      <DependentUpon>TravelMainReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Travelnsurance.aspx.cs">
+      <DependentUpon>Travelnsurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Travelnsurance.aspx.designer.cs">
+      <DependentUpon>Travelnsurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TravelUserReport.aspx.cs">
+      <DependentUpon>TravelUserReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TravelUserReport.aspx.designer.cs">
+      <DependentUpon>TravelUserReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnAuthorizedPageAccess.aspx.cs">
+      <DependentUpon>UnAuthorizedPageAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnAuthorizedPageAccess.aspx.designer.cs">
+      <DependentUpon>UnAuthorizedPageAccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserMaster.aspx.cs">
+      <DependentUpon>UserMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMaster.aspx.designer.cs">
+      <DependentUpon>UserMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHIRDocuments.aspx.cs">
+      <DependentUpon>ViewHIRDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewHIRDocuments.aspx.designer.cs">
+      <DependentUpon>ViewHIRDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInsuranceMessage.aspx.cs">
+      <DependentUpon>ViewInsuranceMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewInsuranceMessage.aspx.designer.cs">
+      <DependentUpon>ViewInsuranceMessage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ClaimAmount\" />
+    <WCFMetadataStorage Include="Connected Services\ClaimService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2242</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2243/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

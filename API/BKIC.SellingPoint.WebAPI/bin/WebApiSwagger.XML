@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BKIC.SellingPoint.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.DropDownController.GetPageDropDowns(System.String)">
+            <summary>
+            Get dropdowns data for the page needed.
+            </summary>
+            <param name="type">Page type(it is motor or travel).</param>
+            <returns>Dropdown data.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.DropDownController.GetVehicleModel(System.String)">
+            <summary>
+            Get the vehicle model's based on the make.
+            e.g for make (BMW) fetch all the models that make 318i,320,535I..
+            </summary>
+            <param name="vehicleMake">vehicle make</param>
+            <returns>vehicle model's</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.DropDownController.GetVehicleBody(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorBodyRequest)">
+            <summary>
+            Get vehicle body type for the particular make and model.
+            </summary>
+            <param name="request">Vehicle body request.</param>
+            <returns>Vehicle body response.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.DropDownController.GetAgencyProducts(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get agency product's based on the insurance type.
+            e.g for the agency SECURA and insurance type MOTOR fetch the product's (Product 1 and Prodcut 2)
+            for the agency TISCO and insurance type MOTOR fetch the product's (GLD,NMC,PLT etc.)
+            </summary>
+            <param name="agency">Agency.</param>
+            <param name="agencyCode">Agent code.</param>
+            <param name="mainclass">MainClass(e.g MOTOR product's for SECURA -SECUR for TISCO - TISCO)</param>
+            <param name="type">Insurance type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.DropDownController.GetInsuranceProductCode(System.String,System.String,System.String)">
+            <summary>
+            Fetch insurance product codes.
+            e.g for the insurance type domestichelp MAINCLASS is PADN.
+            </summary>
+            <param name="agency">Agency.</param>
+            <param name="agencyCode">Agent Code.</param>
+            <param name="insuranceTypeID">Insurance TypeID(1-domesticHelp, 2-Travel)</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndorsementQuote)">
+            <summary>
+            Calculate home endorsement premium.
+            </summary>
+            <param name="homeEndorsementQuote">Home endorsement quote request.</param>
+            <returns>Endorsement premium,Endorsement commission.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.PostHomePolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndorsement)">
+            <summary>
+            Insert the home endorsement.
+            </summary>
+            <param name="homeEndorsement">Home endorsement details.</param>
+            <returns>Homeendorsementid, Homeendorsementnumber.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.EndorsementPrecheck(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndorsementPreCheckRequest)">
+            <summary>
+            Check the if the policy already have saved endorsement,if it is there don't allow to pass the new endorsement.
+            </summary>
+            <param name="req">Endorsement precheck request.</param>
+            <returns>Returns there an endorsemnt with saved staus or not.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.GetAllEndorsements(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndoRequest)">
+            <summary>
+            Get all the home endorsement details for the specific policy.
+            To show the top of the page on any home endorsement page.
+            </summary>
+            <param name="request">Endorsement request.</param>
+            <returns>list of endorsemnt details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.EndorsementOperation(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndorsementOperation)">
+             <summary>
+            Home endorsement operation - authorize or delete.
+             </summary>
+             <param name="request">Endorsement operation request.</param>
+             <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.HomeEndorsementController.GetHomeDomesticHelpEndorsementQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeEndorsementDomesticHelpQuote)">
+            <summary>
+            Calculate endorsement premium for domestic help add.
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController">
+            <summary>
+            Methods for portal - Commissions, HIR, Active policies...
+            </summary>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetCommision(BKIC.SellingPoint.DTO.RequestResponseWrappers.CommissionRequest)">
+            <summary>
+            Get commission for the specified insurance type.
+            </summary>
+            <param name="request">Commission request.</param>
+            <returns>Commission amount.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetHomeCommision(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeCommissionRequest)">
+            <summary>
+            Get commission for the home insurance Basic and SRCC commission used in Endorsement page.
+            </summary>
+            <param name="request">Home commission request.</param>
+            <returns>Basic and SRCC premium.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetHomePolicyCommision(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeCommissionRequest)">
+            <summary>
+            Get commission for the home insurance Basic and SRCC commission used in Policy buy page.
+            </summary>
+            <param name="request">Home commission request.</param>
+            <returns>Total Commmision.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetVat(BKIC.SellingPoint.DTO.RequestResponseWrappers.VatRequest)">
+            <summary>
+            Get vat amount for the premium.
+            </summary>
+            <param name="request"></param>
+            <returns>Vat amount for policy premium and vat amount for commission.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetDomesticPolicyDetails(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchDomesticDetailsRequest)" -->
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetTravelPolicyDetails(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchTravelDetailsRequest)">
+            <summary>
+            Fetch the travel policies by type(Active or HIR).
+            </summary>
+            <param name="request">Search the policies by branch or agency or user.</param>
+            <returns>List of travel policy details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetHomePolicyDetails(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchHomeDetailsRequest)">
+            <summary>
+            Fetch the home policies by type(Active or HIR).
+            </summary>
+            <param name="request">Search the policies by branch or agency or user.</param>
+            <returns>List of home policy details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.FetchMotorPolicyDetails(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchMotorDetailsRequest)">
+            <summary>
+            Fetch motor policy details by status HIR or Active.
+            </summary>
+            <param name="request">Admin motor policy fetch request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.UpdateStatus(BKIC.SellingPoint.DTO.RequestResponseWrappers.UpdateHIRStatusRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.UpdateRemarks(BKIC.SellingPoint.DTO.RequestResponseWrappers.UpdateHIRRemarksRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.InsurancePortalController.GetMotorDetails(System.Int64,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="motorID"></param>
+            <param name="InsuredCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController">
+            <summary>
+            Motor endorsement functionalities.
+            </summary>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndorsementQuote)">
+            <summary>
+            Calculate motor endorsement premium.
+            </summary>
+            <param name="motorEndorsementQuote">Motor endorsement quote request.</param>
+            <returns>Endorsement premium,Endorsement commission.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.PostMotorEndorsement(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndorsement)">
+            <summary>
+            Insert the motor endorsement.
+            </summary>
+            <param name="motorEndorsement">Motor endorsement details.</param>
+            <returns>Motorendorsementid, Motorendorsementnumber.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.PostAdminMotorPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndorsement)">
+            <summary>
+            Insert the motor endorsement type of cancel.
+            </summary>
+            <param name="motorEndorsement">Motor endorsement request</param>
+            <returns>Motorendorsementid, Motorendorsementnumber.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.EndorsementPrecheck(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndorsementPreCheckRequest)">
+            <summary>
+            Check the if the policy already have saved endorsement,if it is there don't allow to pass the new endorsement.
+            </summary>
+            <param name="request">Endorsement precheck request.</param>
+            <returns>Returns there an endorsemnt with saved staus or not.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.GetAllEndorsements(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndoRequest)">
+            <summary>
+            Get all the motor endorsement details for the specific policy.
+            To show the top of the page on any motor endorsement page.
+            </summary>
+            <param name="request">Endorsement request.</param>
+            <returns>list of endorsemnt details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.MotorEndorsementController.EndorsementOperation(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorEndorsementOperation)">
+             <summary>
+            Motor endorsement operation - authorize or delete.
+             </summary>
+             <param name="request">Endorsement operation request.</param>
+             <returns></returns>
+        </member>
+        <member name="T:BKIC.SellingPoint.WebAPI.Controllers.ReportController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ReportController.GetMotorReport(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchReportRequest)">
+            <summary>
+            Get motor report based on type(Report by age or branch or user)
+            </summary>
+            <param name="reportReq">Report request.</param>
+            <returns>Report details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ReportController.GetHomeReport(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchReportRequest)">
+            <summary>
+             Get home report based on type(Report by branch or user)
+            </summary>
+            <param name="reportRequest">Report request.</param>
+            <returns>Report details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ReportController.GetTravelReport(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchReportRequest)">
+            <summary>
+             Get travel report based on type(Report by branch or user)
+            </summary>
+            <param name="reportRequest">Report request.</param>
+            <returns>Report details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ReportController.GetMainReport(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminFetchReportRequest)">
+            <summary>
+             Get main report based on insurance type(Motor or Home or Branch)
+            </summary>
+            <param name="reportRequest">Report request.</param>
+            <returns>Report details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ScheduleController.DownloadScheduleFile(System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Get the schedule for specific insurance type (Motor or Home or Travel or Domestic)
+            </summary>
+            <param name="insuranceType">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="documentNo">Document number.</param>
+            <param name="isEndorsement">Schedule for endorsement page or policy buy page.</param>
+            <param name="EndorsementID">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.ScheduleController.DownloadProposalFile(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Download proposal file.
+            </summary>
+            <param name="insuranceType">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="documentNo">Document number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelEndorsementController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelEndorsementQuote)">
+            <summary>
+            Calculate travel endorsement premium.
+            </summary>
+            <param name="travelEndorsementQuote">Travel endorsement quote request.</param>
+            <returns>Endorsement premium,Endorsement commission.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelEndorsementController.PostTravelendorsement(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelEndorsement)">
+            <summary>
+            Insert the travel endorsement.
+            </summary>
+            <param name="travelEndorsement">Travel endorsement details.</param>
+            <returns>Travelendorsementid, Travelendorsementnumber.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelEndorsementController.EndorsementPrecheck(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelEndorsementPreCheckRequest)">
+            <summary>
+            Check the if the policy already have saved endorsement,if it is there don't allow to pass the new endorsement.
+            </summary>
+            <param name="req">Endorsement precheck request.</param>
+            <returns>Returns there an endorsemnt with saved staus or not.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelEndorsementController.GetAllEndorsements(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelEndoRequest)">
+            <summary>
+            Get all the travel endorsement details for the specific policy.
+            To show the top of the page on any travel endorsement page.
+            </summary>
+            <param name="request">Endorsement request.</param>
+            <returns>list of endorsemnt details.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelEndorsementController.EndorsementOperation(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelEndorsementOperation)">
+             <summary>
+            Travel endorsement operation - authorize or delete.
+             </summary>
+             <param name="request">Endorsement operation request.</param>
+             <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetAgencyPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyTravelRequest)">
+            <summary>
+            Get travel policies by agency.
+            </summary>
+            <param name="request">Agency travel request.</param>
+            <returns>List of travel policies belonging to the particular agency.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetPoliciesByTypeByCPR(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyTravelRequest)">
+            <summary>
+            Get travel policies by CPR.
+            </summary>
+            <param name="request">Agency travel request.</param>
+            <returns>List of travel policies belonging to the particular CPR.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelInsuranceQuote)">
+            <summary>
+            Get Travel Insurance Quote
+            </summary>
+            <param name="quote">Travel quote request.</param>
+            <returns>Travel premium.</returns>      
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.PostTravelPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelPolicy)">
+            <summary>
+            Insert the travel policy.
+            </summary>
+            <param name="travel">Travel policy properties.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetTravelSavedQuotationPolicy(System.String,System.String,System.String,System.Boolean,System.Int64)">
+            <summary>
+            Get travel policy details by document number.
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isEndorsement">details fetched for endorsement page or policy page.</param>
+            <param name="endorsementid">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetExpirtyDate(BKIC.SellingPoint.DTO.RequestResponseWrappers.TravelInsuranceExpiryDate)">
+            <summary>
+            Calculate the travel policy expire date.
+            </summary>
+            <param name="commenceDetails">Policy start date.</param>
+            <returns>Policy expire date.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.TravelInsuranceController.GetTravelPoliciesEndorsement(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyTravelRequest)">
+            <summary>
+            Get all travel policies by agency for endorsement page, all policies should be ACTIVE.
+            Used in every  travel endorsement page search by policy number.
+            </summary>
+            <param name="req">Agency travel request.</param>
+            <returns>List of active travel policies for an endorsement.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.UserController.PostUserMasterDetails(BKIC.SellingPoint.DTO.RequestResponseWrappers.UserMaster)">
+            <summary>
+            Insert the new user to the database.
+            </summary>
+            <param name="details">User details.</param>
+            <returns>User inserted or not.</returns>
+        </member>
+        <member name="M:BKIC.SellingPoint.WebAPI.Controllers.UserController.RegisterAdminUser(BKIC.SellingPoint.DTO.RequestResponseWrappers.AdminRegister)">
+            <summary>
+            Register the new user based the role.
+            </summary>
+            <param name="details">User details.</param>
+            <returns></returns>
+        </member>
+        <member name="T:KBIC.WebAPI.Controllers.DomesticHelpController">
+            <summary>
+            Domestic policy methods.
+            </summary>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.DomesticHelpController.GetDomesticAgencyPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyDomesticRequest)">
+            <summary>
+            Get all domestic policies by agency.
+            </summary>
+            <param name="request">Agency domestic request.</param>
+            <returns>List of domestic policies by agency.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.DomesticHelpController.GetSavedQuotationPolicy(System.String,System.String)">
+            <summary>
+            Get domestic policies details by document number.
+            </summary>
+            <param name="domesticID">document number.</param>
+            <param name="insuredCode">agent code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.DomesticHelpController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.DomesticHelpQuote)">
+            <summary>
+            Calculate premium for the domestichelp.
+            </summary>
+            <param name="quoteRequest">Domestic quote request.</param>
+            <returns>Domestic quote response.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.DomesticHelpController.PostDomesticPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.DomesticPolicyDetails)">
+            <summary>
+            Insert the domestic help policy.
+            </summary>
+            <param name="policydetails">Domestic policy details.</param>
+            <returns>Domestic policy response with domestic id, documentnumber and HIR status.</returns>
+        </member>
+        <member name="T:KBIC.WebAPI.Controllers.HomeInsuranceController">
+            <summary>
+            Home policy methods.
+            </summary>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeInsuranceQuote)">
+            <summary>
+            Get quote for the home policy.
+            </summary>
+            <param name="homeQuote">home quote request.</param>
+            <returns>Premium and commission.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomeAgencyPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyHomeRequest)">
+            <summary>
+            Get home policies by agency.
+            </summary>
+            <param name="req">Home policy request.</param>
+            <returns>List of home policies by agency.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomePoliciesByTypeByCPR(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyHomeRequest)">
+            <summary>
+            Get home policies by certain CPR.
+            </summary>
+            <param name="request">Agency home request.</param>
+            <returns>List of home policies by CPR.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomeSavedQuotationPolicy(System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Get home policy by document number
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isendorsement"></param>
+            <param name="endorsementid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomeRenewalPolicy(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Get home policy by document number
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isendorsement"></param>
+            <param name="endorsementid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomeOracleRenewalPolicy(System.String,System.String,System.String)">
+            <summary>
+            Get home policy by document number
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isendorsement"></param>
+            <param name="endorsementid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.PostPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.HomeInsurancePolicyDetails)">
+            <summary>
+            Post the home policy.
+            </summary>
+            <param name="homePolicyDetails">Home policy details.</param>
+            <returns>Posted home id, document number and hir status.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetHomeEndorsemntPolicies(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyHomeRequest)">
+            <summary>
+            Get all home policies by agency for endorsement page, all policies should be ACTIVE.
+            Used in every  home endorsement page search by policy number.
+            </summary>
+            <param name="req">Agency home request.</param>
+            <returns>List of active home policies for an endorsement.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.HomeInsuranceController.GetOracleHomeRenewalPolicies(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyHomeRequest)">
+            <summary>
+            Get all eligible oracle home policies for renewal by agency.
+            </summary>
+            <param name="req">Agency home request.</param>
+            <returns>List of renewalble oracle home policies by agency.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.DownloadMotorInvoice(System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Get motor insurance certificate.
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agency">Agency</param>
+            <param name="isEndorsement">Get the certificate on endorsement page if it is true otherwise false.</param>
+            <param name="endorsementID">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetSavedQuotationDetails(System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Get motor policy details by the document number.
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isEndorsement">Get the policy details for the endorsemnt page or policy buy page.</param>
+            <param name="endorsementID">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetMotorAgencyPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyMotorRequest)">
+            <summary>
+            Get all motor policies by agency.
+            </summary>
+            <param name="req">Agency motor request.</param>
+            <returns>List of motor policies by agency.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetMotorPoliciesByTypeByCPR(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyMotorRequest)">
+            <summary>
+            Get all motor policies by CPR.
+            </summary>
+            <param name="req">Agency motor request.</param>
+            <returns>List of motor policies by CPR.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetMotorPoliciesByDocumentNo(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyPolicyDetailsRequest)">
+            <summary>
+            Get all motor policies by Document Number(If it has any renewed list out all renewal details).
+            </summary>
+            <param name="req">Agency policy details request.</param>
+            <returns>List of motor policies by document number(Renewal and new policies).</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetQuote(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorInsuranceQuote)">
+            <summary>
+            Calculate motor premium.
+            </summary>
+            <param name="insurance">Motor quote request.</param>
+            <returns>Motor premium.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.PostMotorPolicy(BKIC.SellingPoint.DTO.RequestResponseWrappers.MotorInsurancePolicy)">
+            <summary>
+            Insert the motor insurance policy.
+            </summary>
+            <param name="policy">Motor policy details.</param>
+            <returns>MotorID and Document Number.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetExcessAmount(BKIC.SellingPoint.DTO.RequestResponseWrappers.ExcessAmountRequest)">
+            <summary>
+            Calculate the excess amount based on vehicle make and model.
+            e.g for make BMW and model 350i the excess amount is BD 100.
+            </summary>
+            <param name="request">Excess amount request.</param>
+            <returns>Excess amount and body type.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetOptionalCovers(BKIC.SellingPoint.DTO.RequestResponseWrappers.OptionalCoverRequest)">
+            <summary>
+            Get Optional cover for the motor product,TISCO have optional covers for the product (GLD,ELT,NMC)
+            </summary>
+            <param name="req">Optional cover request.</param>
+            <returns>List of optional covers.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetOptionalCoverAmount(BKIC.SellingPoint.DTO.RequestResponseWrappers.CalculateCoverAmountRequest)">
+            <summary>
+            Calculate optional cover amount.
+            </summary>
+            <param name="req">calculate cover request.</param>
+            <returns>Optional cover amount.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetOracleMotorRenewalDetails(System.String,System.String,System.String)">
+            <summary>
+            Get renewal motor policy details by the document number.
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isEndorsement">Get the policy details for the endorsemnt page or policy buy page.</param>
+            <param name="endorsementID">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetMotorRenewalDetails(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Get renewal motor policy details by the document number.
+            </summary>
+            <param name="documentNo">Document number.</param>
+            <param name="type">Insurance type.</param>
+            <param name="agentCode">Agent code.</param>
+            <param name="isEndorsement">Get the policy details for the endorsemnt page or policy buy page.</param>
+            <param name="endorsementID">Endorsement id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetMotorEndorsementPolicies(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyMotorRequest)">
+            <summary>
+            Get all motor policies by agency for endorsement page, all policies should be ACTIVE.
+            Used in every motor endorsement page search by policy number.
+            </summary>
+            <param name="req">Agency motor request.</param>
+            <returns>List of active motor policies for an endorsement.</returns>
+        </member>
+        <member name="M:KBIC.WebAPI.Controllers.MotorInsuranceController.GetOracleMotorRenewalPolicies(BKIC.SellingPoint.DTO.RequestResponseWrappers.AgencyMotorRequest)">
+            <summary>
+            Get all eligible oracle motor policies for renewal by agency.
+            </summary>
+            <param name="req">Agency motor request.</param>
+            <returns>List of renewalble oracle motor policies by agency.</returns>
+        </member>
+    </members>
+</doc>

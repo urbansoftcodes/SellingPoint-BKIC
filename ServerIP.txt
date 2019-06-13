@@ -1,0 +1,3 @@
+52.50.73.145:9092 - AGENT Application
+
+54.72.144.189:9091 - Portal Application
